@@ -1,0 +1,181 @@
+//Mixins
+@import '_mixins';
+//EXTENDs
+@import '_extends';
+//Product card style
+@import '_product';
+//Modal page  
+@import '_modal';
+//PDP style
+@import '_pdp';
+//Sidebar style 
+@import '__sidebar';
+
+@import '_sidebar_mobile';
+
+//Cartpage 
+@import '_cart';
+
+.quick_view_active_inc {
+    .jofUBE {
+        z-index: initial;
+    }
+
+    .sticky-footer-live-chat {
+        pointer-events: none;
+        z-index: initial;
+    }
+}
+
+.inc_overlay {
+    @include overflow(hidden);
+
+    .ukoptimise-255 .js-analytics-logo-icon-click,
+    .ukoptimise-255 .js-gnav-header-formatter__sections--pc {
+        z-index: initial;
+    }
+
+    @include media_query("1201", "max") {
+        .sd-product-spp .elc-product-full-sticky-menu.sticky-visible {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+.inc_popup_open {
+    .gnav-header-formatter__sections-panel.visible {
+        overflow: visible !important;
+        display: block;
+    }
+
+    .gnav-header-formatter__sections-panel.visible .gnav-header-formatter__close {
+        z-index: 1;
+    }
+
+    .gnav-header-formatter__logo {
+        z-index: 1;
+    }
+
+    #LPMcontainer-1637151036814-0 {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .LPMcontainer.LPMoverlay {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+
+
+.inc_pdp_block,
+.inc_sidebar_modal_block,
+.inc_af_block {
+
+    /*** iPhone and iOS Form Input Zoom Fixes ***/
+    /* Fix Input Zoom on devices older than iPhone 5: */
+    @media screen and (device-aspect-ratio: 2/3) {
+
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"] {
+            font-size: 16px;
+        }
+    }
+
+    /* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+    @media screen and (device-aspect-ratio: 40/71) {
+
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"] {
+            font-size: 16px;
+        }
+    }
+
+    /* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+    @media screen and (device-aspect-ratio: 375/667) {
+
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"] {
+            font-size: 16px;
+        }
+    }
+
+    /* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+    @media screen and (device-aspect-ratio: 9/16) {
+
+        select,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"] {
+            font-size: 16px;
+        }
+    }
+}
+
+.inc_bundles {
+    overflow-x: hidden !important;
+}
+
+
+@supports (-webkit-touch-callout: none) and (max-width: 1030px) {
+    html.inc-prevent-hor-scroll {
+        overflow-x: hidden;
+    }
+}
+
+@include media_query("820", "max") {
+    .device-pc.inc_bundles {
+        .gnav-header-formatter__sections-panel.visible .gnav-header-formatter__close {
+            z-index: 1;
+        }
+
+        .gnav-header-formatter__logo {
+            z-index: 1;
+        }
+    }
+}

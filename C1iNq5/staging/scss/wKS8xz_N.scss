@@ -1,0 +1,78 @@
+
+
+//Mixins
+@import '_mixins';
+
+
+//EXTENDs
+@import '_extends';
+
+//Product card style
+@import '_product';
+
+
+//Modal page
+@import '_modal';
+
+
+//PDP style
+@import '_pdp';
+
+
+//Sidebar style 
+@import '_sidebar';
+
+
+//Cartpage 
+@import '_cart';
+
+
+.inc_overlay {
+    overflow: hidden;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        overflow-x: hidden !important;
+    }
+
+
+    #DW-SFToolkit{
+        display: none !important;
+    } 
+   
+}
+
+#inc_overlay,
+.inc_mobile_overlay {
+   
+}
+
+
+
+.inc_local-progress-self:before, .inc_local-progress:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: .8;
+}
+.inc_local-progress::after, .inc_local-progress-self::after {
+    background: url(https://www.increasingly.co/Implementation/l0vHNy/images/LH-heart-outline.svg) no-repeat;
+}
+.inc_local-progress-self:after, .inc_local-progress-self:before, .inc_local-progress:after, .inc_local-progress:before {
+    content: "";
+    position: fixed;
+    z-index: 999999999;
+    animation: show-loader .3s ease-in;
+}
+.inc_local-progress-self:after, .inc_local-progress:after {
+    top: calc(50% - 28px);
+    left: calc(50% - 28px);
+    width: 56px;
+    height: 56px;
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+.inc_product_description_main_block .accordion-icon{
+    display:none;
+    }
