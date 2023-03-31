@@ -1,0 +1,66 @@
+.sideMenu{
+    box-shadow: 1px 0px 0px #DFE1E5;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 11;
+    transition: 0.2s;
+
+    &.sidebarActive{
+        width: auto;
+        transition: 0.2s;
+        .sideMenuLinks{
+            .links-item{
+                span{
+                    display: block !important;
+                }
+            }
+        }
+    }
+    .incLogo{
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+        padding: 16.5px ;
+        width: 100%;
+        text-align: center;
+    }
+    .sideMenuLinks{
+        .links-item{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 20px 25px;
+            font-weight: 500;
+
+            position: relative;
+            img{
+                max-width: 20px;
+            }
+            span{
+                display: none;
+                margin-left: 10px;
+            }
+            
+            &:hover{
+                background: $backgoundLight;
+                color: $primary;
+                &::before{
+                    left: 0px;
+                }
+            }
+            &::before{
+                content: '';
+                width: 5px;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: -10px;
+                background: $primary;
+                transition: 0.2s;
+            }
+        }
+    }
+}

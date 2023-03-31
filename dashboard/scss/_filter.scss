@@ -1,0 +1,72 @@
+.filter-block {
+  padding: 10px;
+  background: $white;
+  border: 1px solid $borderColor2;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin: 20px 40px;
+  .dropdown-one,
+  .dropdown-two {
+    background: $backgoundLight;
+    border: 1px solid $borderColor2;
+    border-radius: 3px;
+    height: 40px;
+    min-width: 186px;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    padding: 5px 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    background-image: url("../Images/arrowDown.svg");
+    background-repeat: no-repeat;
+    background-position: 96% center;
+    option {
+      min-height: 50px;
+      margin-bottom: 20px;
+    }
+  }
+  .bulk-button,
+  .Cancel-button {
+    background: $white;
+    border: 1px solid $primary;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $primary;
+    height: 40px;
+    min-width: 106px;
+    text-transform: capitalize;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: 0.5s;
+    &:hover {
+      box-shadow: inset 0 0 0 2em $primary;
+      color: $white;
+    }
+  }
+  .Delete-button {
+    background: $white;
+    border: 1px solid #ff0202;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ff0000;
+    height: 40px;
+    min-width: 171px;
+    text-transform: capitalize;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: 0.5s;
+    &:hover {
+      box-shadow: inset 0 0 0 2em #ff0000;
+      color: $white;
+    }
+  }
+}

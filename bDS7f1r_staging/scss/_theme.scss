@@ -1,0 +1,1392 @@
+//*--------------------------Canvas 
+#{$pdpModalBlock} {
+  @extend %inc_canvas; 
+}
+
+  
+
+//*--------------------------Frequently Bought Together
+#{$pdpModalTitleBlock} {
+  @extend %inc_heading_lg;
+
+  //CSS 1
+  color: $black;
+  @include font-weight(600);
+}
+
+//*--------------------------PDP Bundle Wrapper  Start
+
+#{$pdpModalBundleBlock} {
+  @extend %inc_bundle_block; 
+
+  //Main Product Wrap 
+  #{$pdpModalMainProductBlock} {
+    @extend %inc_product_wrap_main;
+  }
+
+
+  //Bundle Plus icon
+  #{$pdpModalAddIconBlock} {
+    @extend %inc_plus_icon_wrap;
+
+    #{$pdpAddIconImgBlock} {
+      #{$pdpAddIconImg} {
+        @extend %inc_plus_icon;
+      }
+    }
+  }
+
+  //Bundle Products Slider
+
+  #{$pdpModalBundleProductBlock} {
+    @extend %inc_product_wrap_bundle;
+
+    //Slider Arrows left
+    //wrap
+    #{$pdpBundleProductLeftBtnBlock} {
+      #{$pdpBundleProductLeftBtnImgBlock} {
+        @extend %inc_slider_arrow_wrap_left;
+
+        //arrow icon
+        #{$pdpBundleProductLeftBtnImg} {
+          @extend %inc_slider_arrow_item_left;
+        }
+      }
+    }
+
+    //Slider Arrows Right
+    //wrap
+    #{$pdpBundleProductRightBtnBlock} {
+      #{$pdpBundleProductRightBtnImgBlock} {
+        @extend %inc_slider_arrow_wrap_right;
+
+        //arrow icon
+        #{$pdpBundleProductRightBtnImg} {
+          @extend %inc_slider_arrow_item_right;
+        }
+      }
+    }
+
+    #{$pdpBundleProductListBlock} {
+      @extend %inc_bundle_product_slider_cover;
+
+      #{$pdpBundleProductListMainBlock} {
+        @extend %inc_bundle_products_slider_wrap;
+        .inc_product_module_block{
+          //CSS 2
+          @include height_width(auto, 100%); 
+        }
+      }
+    }
+  }
+}
+
+//*--------------------------PDP Bundle Wrapper  Ends
+
+
+//*--------------------------Product List Thumbnails Mobile Start
+
+
+#{$pdpBundleProductListBlock}{
+
+ //Product List Thumbnails Wrap
+  #{$pdpBundleProductListItemsBlock}{ 
+    @extend %inc_product_list_thumbnail_wrap; 
+   
+   //Product List Thumbnails Item 
+   #{$pdpBundleProductListItemBlock}{ 
+    @extend %inc_product_list_thumbnail_item; 
+    &.active{
+      @extend %inc_product_list_thumbnail_item_active;
+    }
+
+    #{$pdpBundleProductListItemImgBlock}{ 
+
+      #{$pdpBundleProductListItemImg}{
+        img{
+          @extend %inc_product_list_thumbnail_value; 
+        }
+       
+      }
+
+    }
+   }
+    
+  }
+} 
+
+//*--------------------------PDP Bundle Wrapper  Ends
+
+
+
+
+
+
+//*--------------------------Product Card Global Starts
+
+#{$productBlock} {
+  //Product Canvas
+  @extend %inc_product_card;
+
+  //Product Header
+  #{$productHeaderBlock} {
+    //CSS 3
+    @include display(none);
+  }
+
+  //Product Image Start
+
+  //Image Wrap
+  #{$productImgBlock} {
+    @extend %inc_product_image_wrap;
+
+    #{$productImgMainBlock} {
+      #{$productImgMainImgBlock} {
+        //Image Wrap closest
+        #{$productImgMainImg} {
+          @extend %inc_product_image_inner;
+
+          img {
+            @extend %inc_product_image;
+          }
+        }
+      }
+
+      //Zoom icon wrap
+      #{$productImgMainZoomBlock} {
+        @extend %inc_image_zoom;
+
+        //Zoom icon
+        #{$productImgMainZoomBtnBlock} {
+          #{$productImgMainZoomBtnImgBlock} {
+            #{$productImgMainZoomBtnImg} {
+              @extend %inc_image_zoom_icon;
+            }
+          }
+        }
+
+        //Color Swatch wrap
+        #{$productImgMainZoomBtnTextBlock} {
+          @extend %inc_image_color_pallate_wrap;
+
+          #{$productImgMainZoomBtnText} {
+
+            //CSS 4
+            @extend %inc_row;
+            @include align-items(center);
+            @include justify-content(space-between); 
+            @include height_width(auto, 100%);
+
+            //Color Swatch wrap inner
+            .img_color_swatch {
+              @extend %inc_image_color_pallate_item_wrap;
+
+              div {
+                @extend %inc_image_color_pallate_item;
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) { 
+
+                  //CSS 5
+                  @include display(block);
+                }
+
+                &:nth-child(2) {
+                  //CSS 6
+                  @include margin(0, 0, 0, -6px);
+                }
+
+                &:nth-child(3) {
+                  //CSS 7
+                  @include margin(0, 0, 0, -6px);
+                }
+
+                img {
+                  //CSS 8
+                  @include height_width(auto, 100%);
+                }
+              }
+            }
+
+            //Color Swatch count
+            .img_color_swatch_count {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Product Image Ends
+
+  //Image Gallery
+
+  #{$productImgGalleryBlock} {
+    //CSS 9
+    @include display(none);
+
+    #{$productImgGalleryListBlock} {
+      // Image gallery wrap
+      @extend %inc_product_card_gallery_wrap;
+
+      //Image gallery Item
+      #{$productImgGalleryListItemBlock} {
+        @extend %inc_product_card_gallery_item;
+
+        &.active {
+          @extend %inc_items_active;
+
+          img {
+            @extend %inc_items_value_active;
+          }
+        }
+
+        img {
+          @extend %inc_product_card_gallery_item_img;
+        }
+      }
+    }
+  }
+
+  //Product Description Start
+
+  #{$productDescBlock} {
+    @extend %inc_product_des_wrap;
+
+    //Product Title Wrap
+    #{$productTitleBlock} {
+      @extend %inc_product_title_wrap;
+
+      #{$productTitleTextBlock} {
+        //Product Title closest
+        #{$productTitleText} {
+          a {
+            @extend %inc_product_title_text;
+          }
+        }
+      }
+    }
+
+    //Product Short Information Block
+
+    #{$productInfoBlock} {
+      //CSS 10
+      @include display(none);
+    }
+
+    // Product Pice Wrap
+    #{$productPriceBlock} {
+      @extend %inc_product_price_wrap;
+
+      //Price Active wrap
+      #{$productPriceActiveBlock} {
+        //@extend %inc_active_price_wrap;
+
+        #{$productPriceActiveTextBlock} {
+          //Price Active closest
+          #{$productPriceActiveText} {
+            @extend %inc_active_price_text;
+          }
+        }
+      }
+
+      //Price Regular wrap
+      #{$productPriceRegularBlock} {
+        @extend %inc_regular_price_wrap;
+
+        #{$productPriceRegularTextBlock} {
+          //Price Regular Closest
+          #{$productPriceRegularText} {
+            @extend %inc_regular_price_text;
+
+            //CSS 11
+            @include padding(0, 0, 0, 0);
+          }
+        }
+      }
+    }
+
+    //Product Attribute wrap
+    #{$productAttBlock} {
+      @extend %inc_product_attributes;
+
+      //Product Attribute color wrap
+      #{$productAttColorBlock} {
+        #{$productAttColorTitleTextBlock} {
+          //Color Title Display None
+          #{$productAttColorTitleText} {
+
+            //CSS 13
+            @include display(none);
+          }
+
+          //Product Attribute color Selected
+          #{$productAttColorTitleTextSelected} {
+            @extend %inc_product_attributes_color;
+          }
+        }
+
+        //Color List
+        #{$productAttColorListBlock} {
+
+          //CSS 14
+          @include display(none);
+        }
+      }
+
+      //Product Attribute Size wrap
+
+      #{$productAttSizeBlock} {
+        #{$productAttSizeTitleTextBlock} {
+          //Size Title Display None
+          #{$productAttSizeTitleText} {
+          }
+
+          //Product Attribute Size Selected
+          #{$productAttSizeTitleTextSelected} {
+            @extend %inc_product_attributes_size;
+          }
+        }
+
+        // Size List
+        #{$productAttSizeListBlock} {
+          //no content
+        }
+      }
+    }
+  }
+
+  //Quantity box
+
+  #{$productQtyBlock} {
+
+    //CSS 15
+    @include display(none);
+  }
+}
+
+//Product Description Ends
+//*--------------------------Product Card Global Ends
+
+
+
+//*--------------------------Add Bundle Button Start
+
+//Button Wrap
+#{$productAddBlock} {
+  @extend %inc_button_wrap;
+
+  //Button icon Wrap
+  #{$productAddImgBlock} {
+    @extend %inc_button_icon_wrap;
+
+    #{$productAddImg} {
+      @extend %inc_button_icon;
+
+      &.checked {
+        @extend %inc_button_icon_active;
+      }
+    }
+  }
+
+  //Button Text Wrap
+  #{$productAddTextBlock} {
+    @extend %inc_button_text_wrap;
+
+    #{$productAddText} {
+      @extend %inc_button_text;
+    }
+  }
+}
+//*--------------------------Add Bundle Button Ends
+
+//*--------------------------Selection Modal Global Start
+
+//Modal wrap
+
+#{$productModalBlock} {
+  @extend %inc_selection_modal_overlay;
+
+  &.active {
+    @extend %inc_selection_modal_overlay_active;
+
+    #{$productBlock} {
+      @extend %inc_modal_standard_active;
+    }
+  }
+
+  #{$productBlock} {
+    @extend %inc_product_card_two_cols;
+    @extend %inc_modal_standard;
+
+    //Modal Product Header
+    #{$productHeaderBlock} {
+      @extend %inc_selection_modal_header;
+
+      //Modal Product Header title
+      #{$productHeaderTitleBlock} {
+        #{$productHeaderTitleTextBlock} {
+          //Modal Product Header title wrap
+
+          //Mobile
+          @include media_query("820", "max") {
+
+             //CSS 16
+            @include display(none);
+          }
+         
+
+          #{$productHeaderTitleText} {
+            @extend %inc_selection_modal_header_title;
+          }
+        }
+      }
+
+      //Modal Product Close Button
+
+      #{$productHeaderImgBlock} {
+        #{$productHeaderImg} {
+          @extend %inc_close_button;
+        }
+      }
+    }
+
+    //Modal Image Wrap
+    #{$productImgBlock} {
+      @extend %inc_product_card_two_cols_img;
+
+      #{$productImgMainBlock} {
+        #{$productImgMainImgBlock} {
+          //Image Wrap closest
+          #{$productImgMainImg} {
+            @extend %inc_product_card_two_cols_img_inner;
+
+            img {
+              @extend %inc_product_card_two_cols_product_img;
+            }
+          }
+        }
+
+        #{$productImgMainZoomBlock} {
+
+           //CSS 17
+          @include display(none);
+        }
+      }
+    }
+
+    //Image Gallery
+
+    #{$productImgGalleryBlock} {
+
+       //CSS 18
+      @include display(block);
+    }
+
+    //Product Description Start
+
+    #{$productDescBlock} {
+      @extend %inc_product_card_two_cols_des;
+
+          //Product Title Wrap
+    #{$productTitleBlock} {
+     
+
+      #{$productTitleTextBlock} {
+        //Product Title closest
+        #{$productTitleText} {
+          a {
+            @extend %inc_product_title_text;
+            @include media_query("820", "max") {
+
+               //CSS 18
+              min-height: auto;
+              max-height: auto;
+            }
+          }
+        }
+      }
+    }
+
+      //Product Short Information Block
+
+      #{$productInfoBlock} {
+ //CSS 19
+        @include display(block);
+        @include margin(null, null, 10px, null);
+
+      }
+
+      //Product Attribute wrap
+      #{$productAttBlock} {
+        @extend %inc_product_attributes_modal;
+
+        //Product Attribute color wrap
+
+        #{$productAttColorBlock} {
+          &.active {
+             //CSS 20
+            @include margin(null, null, 0, null);
+
+            #{$productAttColorTitleBlock} {
+              @extend %inc_product_attributes_titles_blobal;
+
+              #{$productAttColorTitleTextBlock} {
+                @extend %inc_row;
+
+                //Color Title Display None
+                #{$productAttColorTitleText} {
+
+                   //CSS 21
+                  @include display(block);
+                  @extend %inc_heading_xm;
+                }
+
+                //Product Attribute color Selected
+                #{$productAttColorTitleTextSelected} {
+                  @extend %inc_product_attributes_color;
+                }
+              }
+            }
+
+            //Color List Wrap
+            #{$productAttColorListBlock} {
+
+               //CSS 22
+              @extend %inc_row;
+              @include flex-wrap(wrap);
+
+              //Color List item
+              #{$productAttColorListItemBlock} {
+                @extend %inc_product_attributes_items_wrap;
+
+                //Color List item value
+                #{$productAttColorListItemImg} {
+                  @extend %inc_product_attributes_items;
+
+                  img {
+
+                     //CSS 23
+                    @include height_width(auto, 100%);
+                  }
+                }
+
+                a {
+                   //CSS 24
+                  @include display(block);
+                  @include height_width(100%, 100%);
+                  @include positioning(absolute, 0, null, null, null);
+                  opacity: 0;
+                }
+
+                &.active {
+                  @extend %inc_items_active;
+
+                  #{$productAttColorListItemImg} {
+                    @extend %inc_items_value_active;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        //Product Attribute Size wrap
+
+        #{$productAttSizeBlock} {
+          &.active {
+            #{$productAttSizeTitleBlock} {
+              @extend %inc_product_attributes_titles_blobal;
+
+              #{$productAttSizeTitleTextBlock} {
+                @extend %inc_row;
+
+                //Size Title Display None
+                #{$productAttSizeTitleText} {
+                   //CSS 25
+                  @include display(block);
+                  @extend %inc_heading_xm;
+                }
+
+                //Product Attribute Size Selected
+                #{$productAttSizeTitleTextSelected} {
+                  @extend %inc_product_attributes_size;
+                }
+              }
+            }
+
+            // Size List wrap
+            #{$productAttSizeListBlock} {
+              @extend %inc_row;
+
+              //Size List item
+              #{$productAttSizeListItemImg} {
+                @extend %inc_product_attributes_items_size_wrap;
+
+                //Size List item  value
+                #{$productAttSizeListItemImg} {
+                  @extend %inc_product_attributes_items;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //Quantity box
+
+      #{$productQtyBlock} {
+        @extend %inc_product_qty_wrap;
+
+        //Minus icon wrap
+        #{$productQtyDownBlock} {
+          @extend %inc_product_qty_minus_wrap;
+
+          #{$productQtyDownBtnBlock} {
+            #{$productQtyDownBtn} {
+              @extend %inc_product_qty_minus_icon;
+            }
+          }
+        }
+
+        //Number Input
+        #{$productQtyInputBlock} {
+          @extend %inc_product_qty_input_wrap;
+
+          input {
+            @extend %inc_product_qty_input;
+          }
+        }
+
+        //Plus icon
+        #{$productQtyUpBlock} {
+          @extend %inc_product_qty_plus_wrap;
+
+          #{$productQtyUpBtnBlock} {
+            #{$productQtyUpBtn} {
+              @extend %inc_product_qty_plus_icon;
+            }
+          }
+        }
+      }
+
+      //Button Wrap
+      #{$productAddBlock} {
+
+         //CSS 27
+        @extend %inc_button_wrap;
+        max-width: 245px; 
+        @include media_query("820", "max") { 
+          @include flex-basis(60%);
+        }
+
+        //Button icon Wrap
+        #{$productAddImgBlock} {
+          @include display(none);
+        }
+
+        //Button Text Wrap Modal
+        #{$productAddTextBlock} {
+          @extend %inc_button_text_wrap;
+
+          #{$productAddText} {
+            @extend %inc_button_normal_text;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//*--------------------------Selection Modal Global Ends
+
+//*--------------------------Price Summary Start
+
+//Bundle Price Summary 
+
+#{$pdpModalBundleCartBlock} {
+  @extend %inc_price_summary;
+
+  &.active{
+@extend %inc_price_summary_active;
+//CSS 28
+z-index: 100;
+  }
+
+  #{$pdpBundleCartPriceBlock} {
+    @include display(none);
+  }
+
+  #{$pdpBundleCartTitleBlock} {
+
+    @include media_query("820", "max") {  
+
+      //CSS 29
+      //Crap
+width: 100%;
+overflow: hidden; 
+transform: scaleY(0);
+transition-duration: 0.4s;
+background:
+#EEE;
+z-index: 999;
+height: 0;
+@include margin(null,null,0,null)
+
+
+    }
+
+    &.active{
+      @include media_query("820", "max") {  
+        //CSS 30
+      height: auto;
+      transform: scaleY(1);
+    transition-duration: 0.4s;
+      }
+    
+    }
+
+    #{$pdpBundleCartTitleTextBlock} {
+      #{$pdpBundleCartTitleText} {
+        @extend %inc_price_summary_tilte;
+       
+      }
+      &.active{
+        //CSS 31
+        height: auto;
+
+transform: translateY(0);
+
+transition-duration: 0.4s;
+      }
+    }
+  } 
+
+  //Price Summary Added Products Wrap
+
+  #{$pdpBundleCartAddedBlock} {
+    @extend %inc_added_product_scroll;
+
+    &.active{
+      @include media_query("820", "max") {  
+        //Crap
+        //CSS 32
+      height: auto;
+
+height: auto;
+transform: scaleY(1);
+
+transition-duration: 0.4s;
+      } 
+    }
+  
+    //Price Summary Added Products  List
+    #{$pdpBundleCartAddedProductBlock} {
+      @extend %inc_added_product_item;
+
+      //Image Thumbnail
+      #{$pdpBundleCartAddedProductImgBlock} {
+        @extend %inc_added_product_item_image_wrap;
+
+        #{$pdpBundleCartAddedProductImg} {
+          img {
+            @extend %inc_added_product_item_image_item;
+          }
+        }
+      }
+
+      //Product Title
+      #{$pdpBundleCartAddedProductTitleBlock} {
+        @extend %inc_added_product_item_title_wrap;
+
+        #{$pdpBundleCartAddedProductTitleTextBlock} {
+          //CSS 33
+          max-width: 120px; 
+
+          #{$pdpBundleCartAddedProductTitleText} {
+          }
+        }
+      }
+
+      //Product Price
+
+      #{$pdpBundleCartAddedProductPriceTextBlock} {
+        #{$pdpBundleCartAddedProductPriceText} {
+        }
+      }
+
+      //Product QTY
+      #{$pdpBundleCartAddedProductQtyBlock} {
+        #{$pdpBundleCartAddedProductQtyTextBlock} {
+          #{$pdpBundleCartAddedProductQtyText} {
+          }
+        }
+      }
+
+      //Edit & Remove
+      #{$pdpBundleCartAddedProductEditBlock} {
+        @extend %inc_edit-delete_wrap;
+
+        //Edit Button
+        #{$pdpBundleCartAddedProductEditTextBlock} {
+          #{$pdpBundleCartAddedProductEditText} {
+            @extend %inc_edit_icon;
+          }
+        }
+
+        //Remove Button
+        #{$pdpBundleCartAddedProductEditImgBlock} {
+          #{$pdpBundleCartAddedProductEditImg} {
+            @extend %inc_remove_icon;
+          }
+        }
+      }
+    }
+
+    //Placeholder Product
+    .bundle_cart_added_product_div{
+      @extend %inc_placeholder_product;
+    }
+  }
+
+  // Price checkout wrap
+  #{$pdpBundleCartSummaryBlock} {
+    @extend %inc_price_checkout_wrap; 
+
+    // Price checkout Label Wrap
+    #{$pdpBundleCartSummaryTitleBlock} {
+      @extend %inc_price_checkout_label_wrap;
+      @include media_query("820", "max") {
+        //CSS 34
+        @include flexbox();
+        @include align-items(center);
+      }
+
+      #{$pdpBundleCartSummaryTitleText} {
+        //CSS 35
+        @extend %inc_heading_sm;    
+        @include text-align(left);
+        color: $black;
+        @include font-weight(600);
+        @include media_query("820", "max") {
+          @include margin(null,null,0,null);
+        }
+      }
+    }
+
+    // Price checkout Price wrap 
+    #{$pdpBundleCartSummaryPriceBlock} {
+      @extend %inc_product_price_wrap;
+      //CSS 36
+      @include padding(0, 15px, 0, 15px);
+
+      //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(60%); 
+    @include justify-content(flex-end);
+  }
+
+      //Regular Price
+      #{$pdpBundleCartSummaryPriceRegularBlock} {
+        @extend %inc_regular_price_wrap;
+
+        #{$pdpBundleCartSummaryPriceRegularText} {
+          @extend %inc_regular_price_text;
+          //CSS 37
+          @include rhythm(20, 24);
+        }
+      }
+
+      //Active Class
+      #{$pdpBundleCartSummaryPriceActiveBlock} {
+        //@extend %inc_active_price_wrap;
+        #{$pdpBundleCartSummaryPriceActiveText} {
+          @extend %inc_active_price_text;
+          //CSS 37
+          @include rhythm(20, 24);
+        }  
+      }
+    }
+
+    //Price Summary Checkout button
+  
+    .inc_pdp_bundle_cart_summary_view_block{
+      @extend %inc_cart_summary_view_block;
+      .inc_pdp_bundle_cart_summary_view_btn_block{
+        @extend %inc_row;
+        @extend %inc_button_wrap;
+        @extend %inc_button_normal_text;
+        //CSS 38
+        background: $white;
+        color:$black;
+        
+      }
+    }
+    #{$pdpBundleCartSummaryAddBlock} {
+      //CSS 39
+      @include padding(15px, 15px, 15px, 15px);
+          //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(60%);  
+    @include padding(0, null, 0, 2px);
+  }
+
+      #{$pdpBundleCartSummaryAddBtnBlock} {
+        @extend %inc_button_wrap;
+
+        //Button text
+
+        #{$pdpBundleCartSummaryAddBtnTextBlock} {
+          @extend %inc_button_text_wrap;
+
+          //Mobile
+          @include media_query("820", "max") {
+            //CSS 40
+            @include padding(0,null,0,null)
+          }
+
+          #{$pdpBundleCartSummaryAddBtnText} {
+            @extend %inc_button_normal_text;
+          }
+        }
+
+        //Button icon
+        /* #{$pdpBundleCartSummaryAddBtnImgBlock}{
+
+              @extend  %inc_button_icon_wrap; 
+
+              #{$pdpBundleCartSummaryAddBtnImg}{ 
+                @extend  %inc_button_icon; 
+
+              } 
+            }*/
+      }
+    }
+  }
+}
+//*--------------------------Price Summary Ends
+
+
+
+
+
+//*--------------------------Sidebar Start 
+//Sidebar Overlay
+.inc_sidebar_overlay_block {
+  @extend %inc_modal_overlay; 
+}
+
+//Sidebar Wrap
+#{$sidebarModalBlock} {
+  @extend %inc_sidebar;
+
+  &.active {
+    @extend %inc_sidebar_active;
+  }
+
+  // Cart Added Product wrap
+
+  #{$sidebarCartAddedListBlock} {
+    @extend %inc_row;
+    background: $backface_color_3;
+    //CSS 41
+    @include justify-content(center);
+    @include padding(10px, 10px, 10px, 10px);
+    @include overflow(auto);
+   
+
+    #{$sidebarCartAddedProductBlock} {
+      //CSS 41
+      @include height_width(70px, 70px);
+      
+      @include margin(auto, 10px, auto, 10px);
+     
+
+
+        //Added Products Description
+        #{$sidebarCartAddedProductDescBlock} {
+          @extend %inc_added_product_des_wrap;
+          #{$sidebarCartAddedProductDescTitleBlock} {
+            @extend %inc_product_title_text;
+            //CSS 42
+            min-height: auto;
+            
+          }
+  
+          #{$sidebarCartAddedProductDescPriceBlock} {
+           
+          }
+        }
+
+      &:hover{
+     
+     
+
+        #{$sidebarCartAddedProductDescBlock} {
+          //CSS 43
+          transform: scale(1);
+          transition-duration: 0.3s;
+        }
+
+
+      
+
+      }
+
+      #{$sidebarCartAddedProductImgBlock} {
+        @extend %inc_confirm_check;
+
+        #{$sidebarCartAddedProductImg} {
+          @extend %inc_img_circle;
+
+          img {
+            @extend %inc_img_circle_item;
+          }
+        }
+      }
+
+   
+    }
+  }
+
+  // Sidebar Header Block
+
+  #{$sidebarHeaderBlock} {
+    //CSS 44
+    @include positioning(relative, null, null, null, null);
+    background: $backface_color_3;
+    @include padding(10px, 10px, 10px, 10px);
+
+    #{$sidebarHeaderContinueBlock} {
+      //Close icon block wrap
+      #{$sidebarHeaderContinueImgBlock} {
+        //Close icon
+        #{$sidebarHeaderContinueImg} { 
+          //CSS 45
+          @extend %inc_close_button;
+          @include positioning(absolute, -80px, 10px, auto, auto);
+
+        }
+      }
+
+      //Close text blockwrap
+      #{$sidebarHeaderContinueTextBlock} {
+        //CSS 46
+        @include display(none);
+      }
+    }
+
+    //Just Added Title
+
+    #{$sidebarHeaderTitleBlock} {
+      #{$sidebarHeaderTitleTextBlock} {
+        #{$sidebarHeaderTitleText} {
+          @extend %inc_heading_sm;
+          color:$black;
+        
+        }
+      }
+    }
+
+    // Product count / Subtotal
+    #{$sidebarHeaderItemBlock} {
+      @extend %inc_header_item_block;
+
+      #{$sidebarHeaderItemCountBlock} {
+        @extend %inc_row_center;
+      }
+    }
+  }
+
+  //Recomended Block
+  #{$sidebarRecommendedBlock} {
+    @extend %inc_recomended_block_wrap;
+
+    //Recomended Block title Wrap
+    #{$sidebarRecommendedTitleBlock} {
+      @extend %inc_recomended_block_title_wrap;
+
+      #{$sidebarRecommendedTitleText} {
+        @extend %inc_heading_lg;
+        //CSS 47
+        @include border("bottom", 1px, solid, $border_color_1);
+        @include padding(null, null, 10px, null);
+        color:$black;
+        @include font-weight(600);
+      }
+    }
+
+    //Recomended Block Categories Wrap
+    #{$sidebarRecommendedTabsBlock} {
+      //Recomended Block Categories list wrap
+      #{$sidebarRecommendedTabsListBlock} {
+        //CSS 48
+        @extend %inc_row;
+        @include overflow(hidden);
+        @include padding(null,15px,null,15px);
+
+        //Mobile
+        @include media_query("820", "max") {
+          @include overflow(auto);
+        }
+
+        #{$sidebarRecommendedTabsListItemBlock} {
+          @extend %inc_recomended_block_categories_list_item;
+
+          &.active {
+            @extend %inc_recomended_block_categories_list_item_active;
+          }
+
+          #{$sidebarRecommendedTabsListItemTextBlock} {
+            #{$sidebarRecommendedTabsListItemText} {
+            }
+          }
+        }
+      }
+    }
+
+    //Recomended Products arrow
+
+    //left
+    #{$sidebarRecommendedProductsLeftBlock} {
+      #{$sidebarRecommendedProductsLeftBtnBlock} {
+        #{$sidebarRecommendedProductsLeftBtnImgBlock} {
+          @extend %inc_slider_arrow_wrap_left;
+
+          #{$sidebarRecommendedProductsLeftBtnImg} {
+            @extend %inc_slider_arrow_item_left;
+          }
+        }
+      }
+    } 
+
+    //Right
+    #{$sidebarRecommendedProductsRightBlock} {
+      #{$sidebarRecommendedProductsRightBtnBlock} {
+        #{$sidebarRecommendedProductsRightBtnImgBlock} {
+          @extend %inc_slider_arrow_wrap_right;
+
+          #{$sidebarRecommendedProductsRightBtnImg} {
+            @extend %inc_slider_arrow_item_right;
+          }
+        }
+      }
+    }
+
+    //Recomended Block Products Wrap
+    #{$sidebarRecommendedProductsBlock} {
+      //CSS 49
+      @include positioning(relative, null, null, null, null);
+
+      @include margin(30px, auto, 30px, auto);
+       //Mobile
+       @include media_query("820", "max") {
+        @include margin(15px, auto, 15px, auto);
+      }
+      #{$sidebarRecommendedProductsListBlock} {
+        @extend %inc_recomended_products_block;
+
+        #{$productShowcaseBlock} { 
+        #{$productBlock} {
+          @extend %inc_recomended_product_card;
+
+          //Button Wrap
+          #{$productAddBlock} {
+            @extend %inc_button_wrap;
+
+            //CSS 50
+            max-width: 245px;
+
+            //Button icon Wrap
+            #{$productAddImgBlock} {
+              @include display(none);
+            }
+
+            //Button Text Wrap Modal
+            #{$productAddTextBlock} {
+              @extend %inc_button_text_wrap;
+
+              #{$productAddText} {
+                @extend %inc_button_normal_text;
+              }
+            }
+          }
+        }
+      }
+      }
+    }
+  }
+
+  //Sidebar Checkout Wrap
+  #{$sidebarCheckoutBlock} {
+    @extend %inc_checkout_block_wrap;
+
+    //Conmtine Button
+    #{$sidebarCheckoutContinueBlock} {
+      @include media_query("820", "max") {
+        //CSS 51
+        @include height_width(40px, 50%);
+       }
+      #{$sidebarCheckoutContinueBtnBlock} {
+        @extend %inc_button_wrap;
+
+        #{$sidebarCheckoutContinueBtnTextBlock} {
+          @extend %inc_button_text_wrap;
+          #{$sidebarCheckoutContinueBtnText} {
+            @extend %inc_button_normal_text;
+            //CSS 52
+            min-width: 260px;
+            @include media_query("820", "max") {
+             min-width: 100%; 
+            }
+          }
+        }
+      }
+    }
+
+    //Checkout Button
+    #{$sidebarCheckoutBasketBlock} {
+      @include media_query("820", "max") {
+
+        //CSS 53
+        @include height_width(40px, 50%);
+       }
+      #{$sidebarCheckoutBasketBtnBlock} {
+        @extend %inc_button_wrap;
+
+        #{$sidebarCheckoutBasketBtnTextBlock} {
+          @extend %inc_button_text_wrap;
+
+          #{$sidebarCheckoutBasketBtnText} {
+            @extend %inc_button_normal_text;
+            //CSS 54
+            min-width: 260px;
+
+
+            background: $black;
+            @include media_query("820", "max") {
+              //CSS 55
+              min-width: 100%;
+            }
+
+            a {
+              //CSS 56 
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//*--------------------------Sidebar Ends
+
+//*--------------------------Cart Start
+//After Modal Wrap
+#{$afModalBlock} {
+  background: $canvas;
+   //CSS 57
+  @include padding(20px, 0, 20px, 0);
+
+  //After Modal Title
+  #{$afModalTitleBlock} {
+    #{$afModalTitleTextBlock} {
+      #{$afModalTitleText} {
+        @extend %inc_heading_lg;
+      }
+    }
+  }
+
+  //After Modal Bundle Block
+  #{$afModalBundlesBlock} {
+    @extend %inc_af_container_outer;
+
+    //Recomended Products arrow
+
+    //left
+    #{$afLeftBlock} {
+      #{$afLeftBtnBlock} {
+        #{$afLeftBtnImgBlock} {
+          @extend %inc_slider_arrow_wrap_left;
+
+          #{$afLeftBtnImg} {
+            @extend %inc_slider_arrow_item_left;
+          }
+        }
+      }
+    }
+
+    //Right
+    #{$afRightBlock} {
+      #{$afRightBtnBlock} {
+        #{$afRightBtnImgBlock} {
+          @extend %inc_slider_arrow_wrap_right;
+
+          #{$afRightBtnImg} {
+            @extend %inc_slider_arrow_item_right;
+          }
+        }
+      }
+    }
+
+    #{$afProductListBlock} {
+     @extend %inc_list_products_row_only;
+
+      //Product Card
+      #{$productShowcaseBlock} {
+        #{$productBlock} {
+          @extend %inc_af_product_card;
+
+          //af product image
+          #{$productImgBlock} {
+            @extend %inc_af_product_card_image_wrap;
+
+            #{$productImgMainBlock} {
+              #{$productImgMainImgBlock} {
+                //Image Wrap closest
+                #{$productImgMainImg} {
+                   //CSS 57
+                  height: 170px;
+                }
+              }
+            }
+          }
+
+          //af product Des
+          #{$productDescBlock} {
+            @extend %inc_af_product_card_des_wrap;
+
+            //AF Product Add button
+
+            #{$productAddBlock} {
+              @extend %inc_button_wrap;
+               //CSS 58
+              max-width: 100%;
+
+              //Button icon Wrap
+              #{$productAddImgBlock} {
+                 //CSS 59 
+                @include display(none);
+              }
+
+              //Button Text Wrap Modal
+              #{$productAddTextBlock} {
+                @extend %inc_button_text_wrap;
+
+                #{$productAddText} {
+                  @extend %inc_button_normal_text;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//*--------------------------Cart Ends

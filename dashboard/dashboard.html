@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+
+    <title>Increasingly Dashboard</title>
+    <link rel="shortcut icon" href="./Images/logo.svg">
+    <link href="./css/style.css" rel="stylesheet" />
+    <style type="text/css">
+  
+    </style>
+    <script src="./data.js"></script>
+</head>
+
+<body class="overflowHidden collectionList dashboard">
+     <div class="overlay "></div>
+   <!--Modal popup-->
+    <div class="modal ">
+        <div class="modal-content">
+            <!-- <div class="modal-body">
+                 <div class="modal-msg">
+                        <p>Please publish an item or a delete product to replace selected product</p>
+                 </div>
+                <div class="modal-btn incButtonPrimary">Ok</div>
+            </div> -->
+
+            <!--Feed refresh-->
+             <div class="modal-body feedRefresh">
+                <div class="modal-msg">
+                    <img src="./Images/tick.svg">
+                    <h3>Completed</h3>
+                    <ul>
+                        <li>We have sent an email confirmation to the email registered with this account.</li>
+                        <li>It may take up to 20 minnutes for this change to take effect on your site</li>
+                        <li>If this change does not take effect, please contact support</li>
+                    </ul>
+                    
+                </div> 
+                <div class="modal-btn incButtonPrimary inc_ok">Ok</div>
+            </div>
+
+            <!--Disable Bundles-->
+             <div class="modal-body disableBundle">
+                <div class="modal-msg">
+                  <img src="./Images/error.svg">
+                    <h3>Heads up!</h3>
+                      <ul>
+                        <li>All bundles will be disabled across the website</li>
+                        <li>It may take up to 20 minnutes for this change to take effect on your site</li>
+                    </ul>
+                </div>
+                <div class="modalbtns"> 
+                    <button class="modal-btn incButtonPrimary continue_disable" >Continue</button>
+                    <button class="modal-btn incButtonPrimary no_thanks_button">No thanks!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="feedRefr_modal_wrapper">
+                    <div class="feedRefr_modal_block">
+                      <div class="feedRefr_modal_img_block">
+                        <div class="feedRefr_modal_text">Done</div>
+                      </div>
+                      <div class="feedRefr_modal_info">
+                        <p>We have sent email confirmation to the email registered with this account</p>
+                        <p>It may take up to 20 minutes for this change to take effect on your site</p>
+                        <p>If this change does not take effect, please contact support</p>
+                      </div>
+                    <div class="feedRefr_modal_supportTxt">
+                    WANT US TO MAKE CHANGE TO THE ALGORITHM ?
+                        <span>
+                            <a href='mailto:hello@increasingly.com' style="color:#48B28D;" class="contact_support">PLEASE CONTACT US HERE</a>
+                        </span>
+            </div>
+        </div>
+        </div> -->
+
+    <!--Sidemenu-->
+    <aside class="sideMenu">
+        <div class="incLogo">
+            <img src="./Images/logo.svg" alt="">
+        </div>
+        <ul class="sideMenuLinks">
+            <li class="links-item active"><a href="./dashboard.html"><img src="./Images/home.svg">
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="links-item" style="display: none;"><a href="reporting.html"><img src="./Images/report.svg"> <span>Reporting</span></a>
+            </li>
+            <li class="links-item " style="display: none;"><a href="./createCollection.html"><img src="./Images/collection.svg">
+                    <span>Collection</span></a></li>
+            <li class="links-item" style="display: none;"> <a href="#"><img src="./Images/bundle.svg"> <span>Bundle Operation</span></a></li>
+            <li class="links-item logOut"><a href="#" onclick="signOut()"><img src=" ./Images/logout.svg">
+                    <span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <div class="mainWrapper">
+        <!--Header-->
+        <header>
+            <div class="incToggleDropdown">
+                <div class="incToggle" id="incToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+
+            </div>            
+            <div class="incHeaderLinks">
+                <ul>
+                    <li class="incNotification"><img src="./Images/notification.svg" alt=""></li>
+                    <li class="incProfile"><img src="./Images/person.svg"> <span> Hi Admin</span></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="collectionWrapper collectionWrapperFlex">
+            <div class="homeHeader">
+                <div class="homeHeaderTitleBlock">
+                    <div class="homeHeaderTitleText">Welcome !</div>
+                    <div class="homeHeaderdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id mattis
+                        faucibus amet
+                        sit tellus ut imperdiet orci sit. Eleifend amet felis a, augue adipiscing vitae. Sed
+                        condimentum lacus
+                        in eu enim.</div>
+                </div>
+                <button class="incButtonPrimary webinar_" id="webinar"><img src="./Images/play_button.svg">
+                    <a href="https://www.increasingly.com/webinars/optimising-sales-in-an-attention-deficit-era/" target="_blank">Watch our
+                        latest
+                        webinar
+                        </a></button>
+            </div>
+            <div class="incReportsMainBlock">
+                <div class="incReportBlock">
+                    <div class="incReportTags">
+                        <div class="back_reporting">
+                            <span>Back</span>                            
+                        </div>
+                        <ul class="incReportTagsList">
+                            <li class="active"><span>Bundle report</span></li>
+                            <li><span>Top category report</span></li>
+                            <li><span> Top bundles report</span></li>
+                            <li><span>Dynamic Recs</span></li>
+                        </ul>
+
+                    </div>
+                    <div class="reporting_snippet">
+                        <div class="iframe_snippet"></div>
+                    </div>
+                    <div class="filterReportBlock">
+                        <div class="incReportBlockTitle">
+                            <div class="incReportBlockTitleText">Bundle report</div>
+                        </div>
+                        <div class="viewReport">
+                            <div class="filter-block">
+                                <select class="dropdown-two">
+                                    <option value="1">Last 1 day</option>
+                                    <option value="7">Last 7 days</option>
+                                    <option value="14">Last 14 days</option>
+                                    <option value="30">Last 30 days</option>
+                                </select>
+                            </div>
+                            <button class="incButtonPrimary view-button">View Detailed Report</button>
+                        </div>
+                    </div>
+                    <div class="incReportInfo">
+                        <div class="incReportChart">
+                            <div class="incSales">
+                                <div class="salesImg"><img src="./Images/dollar.svg"></div>
+                                <div class="salesTitle">Gross Sales</div>
+                                <div class="totalShare grosssale">£1,091,018.67</div>
+                            </div>
+                            <div class="incSales">
+                                <div class="salesImg"><img src="./Images/impact.svg"></div>
+                                <div class="salesTitle">Sales Impact</div>
+                                <div class="totalShare saleimpact">£2,018.67</div>
+                            </div>
+                            <div class="incSales">
+                                <div class="salesImg"><img src="./Images/invest.svg"></div>
+                                <div class="salesTitle">Return on Investment</div>
+                                <div class="totalShare returninvestment">10</div>
+                            </div>
+                            <div class="incSales">
+                                <div class="salesImg"><img src="./Images/uplift.png"></div>
+                                <div class="salesTitle">Incremental Uplift %</div>
+                                <div class="totalShare prodbuplift">3.4%</div>
+                            </div>
+                            <div class="incSales">
+                                <div class="salesImg"><img src="./Images/coverage.svg"></div>
+                                <div class="salesTitle">Bundle Coverage %</div>
+                                <div class="totalShare bundlecovrage">98%</div>
+                            </div>
+                        </div>
+                        <div class="incCategoryReport">
+                            <table>
+                                <thead class="incCategoryHeading">
+                                    <tr>
+                                        <th class="incParticulars"></th>
+                                        <th>
+                                            <div class="salesImg"><img src="./Images/impact.svg"></div>Sales Impact
+                                        </th>
+                                        <th>
+                                            <div class="salesImg"><img src="./Images/Basket.svg"></div>Bundles Sold
+                                        </th>
+                                        <th>
+                                            <div class="salesImg"><img src="./Images/dollar.svg"></div>Bundle Sales
+                                        </th>
+                                        <th>
+                                            <div class="salesImg"><img src="./Images/uplift.png"></div>Bundle Uplift
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-column="incParticulars" class="incParticulars">Gardens</td>
+                                        <td data-column="Sales Impact">£7,323,300.81</td>
+                                        <td data-column="Bundles Sold">9,127</td>
+                                        <td data-column="Bundle Sales">£508,203.52</td>
+                                        <td data-column="Bundle  Uplift">0.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td data-column="incParticulars" class="incParticulars">Building Materials</td>
+                                        <td data-column="Sales Impact">£7,323,300.81</td>
+                                        <td data-column="Bundles Sold">9,127</td>
+                                        <td data-column="Bundle Sales">£508,203.52</td>
+                                        <td data-column="Bundle  Uplift">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td d data-column="incParticulars" class="incParticulars">Doors & Windows</td>
+                                        <td data-column="Sales Impact">£7,323,300.81</td>
+                                        <td data-column="Bundles Sold">9,127</td>
+                                        <td data-column="Bundle Sales">£508,203.52</td>
+                                        <td data-column="Bundle  Uplift">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-column="incParticulars" class="incParticulars">Kitchens</td>
+                                        <td data-column="Sales Impact">£7,323,300.81</td>
+                                        <td data-column="Bundles Sold">9,127</td>
+                                        <td data-column="Bundle Sales">£508,203.52</td>
+                                        <td data-column="Bundle  Uplift">0.00</td>
+                                    </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="incTopCategoryBundles">
+
+                            <table class="incTopCategory">
+                                <thead>
+                                    <tr>
+                                        <th class="incTopHeading">Bundle ID</th>
+                                        <th class="incTopHeading">Product</th>
+                                        <th class="incTopHeading">Number Of Time Sold</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incTopHeadingDetails">5277524</td>
+                                        <td class="incTopHeadingDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incTopHeadingDetails">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="incDynamicRecs">
+                            <table class="incDynamicRecsList">
+                                <thead>
+                                    <tr>
+                                        <th class="incDynamicRecsHeading">Bundle ID</th>
+                                        <th class="incDynamicRecsHeading">Product</th>
+                                        <th class="incDynamicRecsHeading">Number Of Time Sold</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="incDynamicRecsDetails">5277524</td>
+                                        <td class="incDynamicRecsDetails">Blue Circle General Purpose Cement - 25Kg</td>
+                                        <td class="incDynamicRecsDetails">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="incProductBlock">
+                    <div class="incProductBlockTitle">
+                        <div class="incProductBlockTitleText">Active Products</div>
+                    </div>
+                    <div class="incProductListBlock">
+                        <div class="incProductMainBlock">
+                            <div class="incProductDesc">
+                                <div class="incProductDetails">
+                                    <div class="incProductImg"><img src="./Images/product_bundling.svg"></div>
+                                    <div class="incProductTitle">
+                                        <div class="incProductTitleText">Product Bundling</div>
+                                        <div class="incProductModules">PLP, PDP, Sidebar, Cart page </div>
+                                    </div>
+                                </div>
+                                <div class="enablebutton">
+                                    <button class="incButtonPrimary" id="RefreshButton"><span>Refresh Feed<span>
+                                            </span></button>
+                                    <button class="incButtonPrimary" id="DisableButton"><span>Disable bundles<span>
+                                            </span></button>
+                                            <div class="switch_status_text" style="display: none;">Bundles are currently ENABLED</div>
+                                </div>
+                            </div>
+                        </div>
+                       <!--  <div class="incProductMainBlock">
+                            <div class="incProductDesc">
+                                <div class="incProductDetails">
+                                    <div class="incProductImg"><img src="./Images/google_shopping_bundling.svg"></div>
+                                    <div class="incProductTitle">
+                                        <div class="incProductTitleText">Google Shopping Bundling</div>
+                                        <div class="incProductModules">Landing Page, Sidebar, Cart page </div>
+                                    </div>
+                                </div>
+                                <div class="enablebutton">
+                                    <button class="incButtonPrimary" id="RefreshButton"><span>Refresh Feed<span>
+                                            </span></button>
+                                    <button class="incButtonPrimary" id="DisableButton"><span>Disable bundles<span>
+                                            </span></button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                </div>
+
+
+                <div class="incMoreProductBlock">
+                    <div class="incMoreProductBlockTitle">
+                        <div class="incMoreProductBlockTitleText">Explore more products</div>
+                    </div>
+                    <div class="incProductInfoMainBlock">
+                        <div class="incShowCaseBlock">
+                            <div class="incProductInfoBlock">
+                                <div class="incMainImgblock">
+                                    <div class="incMainImg">
+                                        <img src="Images/fbt-img.png" alt="fbt">
+                                    </div>
+                                </div>
+                                <div class="incProductDescBLock">
+                                    <div class="incProductMainTitle">
+                                        <div class="incProductMainTitleText">
+                                            Dynamic Recommendation
+                                        </div>
+                                    </div>
+                                    <div class="incProductSubModules">
+                                        <div class="incProductSubModulesDetails">
+                                            PLP, PDP
+                                        </div>
+                                    </div>
+                                    <div class="incExplore">
+                                        <div class="incKnowMore">
+                                            <button class="incButtonSecondary" id="KnowMore"><a href="https://www.increasingly.com/" target="_blank" style="color: #00B3A4;">Know more</a></button>
+                                        </div>
+                                        <div class="incContactUS">
+                                            <button class="incButtonPrimary" id="ContactUS"><a href="https://www.increasingly.com/contact/" target="_blank" style="color: #00B3A4;">Contact us
+                                                </a></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="incShowCaseBlock">
+                            <div class="incProductInfoBlock">
+                                <div class="incMainImgblock">
+                                    <div class="incMainImg">
+                                        <img src="Images/fbt-img.png" alt="fbt">
+                                    </div>
+                                </div>
+                                <div class="incProductDescBLock">
+                                    <div class="incProductMainTitle">
+                                        <div class="incProductMainTitleText">
+                                            Dynamic Recommendation
+                                        </div>
+                                    </div>
+                                    <div class="incProductSubModules">
+                                        <div class="incProductSubModulesDetails">
+                                            PLP, PDP
+                                        </div>
+                                    </div>
+                                    <div class="incExplore">
+                                        <div class="incKnowMore">
+                                            <button class="incButtonSecondary" id="KnowMore">Know more</button>
+                                        </div>
+                                        <div class="incContactUS">
+                                            <button class="incButtonPrimary" id="ContactUS"><span>Contact us
+                                                </span></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function removecssfromli() {
+            if(document.querySelector('#inc_searchInput') != null){
+                document.querySelector('#inc_searchInput').value=""
+                var alllis = document.querySelectorAll('.get_allclient_list_dropdown li')
+                for (var d = 0; d < alllis.length; d++) {
+                    alllis[d].style.display = "flex"
+                }
+            }
+        }
+        function generate_html_tag(element, className) {
+            var generateEl = document.createElement(element);
+            if(className != undefined){
+                generateEl.classList.add(className)
+            }
+            return generateEl;
+        }
+        function sortByKey(array, key) {
+            return array.sort(function(a, b) {
+                var x = a[key],
+                    y = b[key];
+                if (typeof x === 'string') {
+                    x = x.toLowerCase();
+                    y = y.toLowerCase();
+                    if (!isNaN(x) && !isNaN(y)) {
+                        x = parseInt(x, 10);
+                        y = parseInt(y, 10);
+                    }
+                }
+                const sorteddata = x > y ? 1 : 0;
+                return (x < y ? -1 : (sorteddata));
+            });
+        }
+        var styles_LOADER = '.get_allclient_list{position:relative;display: flex;} .get_allclient_list_block{margin: 0 auto;padding: 20px;} .get_allclient_list_dropdown{opacity:0;position:absolute;top:34px;background:#fff;left:2px;box-shadow:0 0 4px 2px #e7e6e6;max-height:440px;width:250px;overflow:auto;transition:.4s;border:1px solid #ccc;border-radius:2px;transform:translateY(20px);z-index:-1;box-sizing:content-box}.get_allclient_list_dropdown::-webkit-scrollbar{width:.5em}.get_allclient_list_dropdown::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3)}.get_allclient_list_dropdown::-webkit-scrollbar-thumb{background-color:#a9a9a9;outline:1px solid slategrey}.get_allclient_list.active .get_allclient_list_dropdown{opacity:1;transform:translateY(0);z-index:1}.dropdowns{display:flex;flex-basis:100%;justify-content:flex-start}.reporting_li_dropdown{padding:7px 15px;cursor:pointer;font-size:14px;border-bottom:1px solid #ddd}.reporting_li_dropdown:first-child{border-bottom:0}.size_input_div{width:100%}.reporting_li_dropdown input{width:100%;border:1px solid #ddd;background:#f3f3f3;padding-left:10px;height:37px;line-height:37px;border-radius:3px;outline:0}.reporting_li_dropdown.avtive,.reporting_li_dropdown:hover{background:#fcfcfc}'
+
+
+        var css_inc = document.createElement('style'); 
+        css_inc.type = 'text/css'; 
+        css_inc.innerHTML=styles_LOADER
+        // document.getElementsByTagName("head")[0].appendChild(css_inc); 
+
+        if(window.location.href != 'https://app.increasingly.com/'){
+            var htmlclient = '<div class="dropdowns"><div class="get_allclient_list"> <span class="client_list_text" >Select Client</span> <span class="client_list_text_error"></span><ul class="get_allclient_list_dropdown"></ul></div></div>'
+            var get_allclient_list_block = document.createElement('div')
+            get_allclient_list_block.classList.add('get_allclient_list_block')
+            get_allclient_list_block.innerHTML = htmlclient
+            // var elsib = document.querySelector('.incReportsMainBlock .incReportBlock')
+            document.querySelector('.incToggleDropdown').appendChild(get_allclient_list_block)
+            // elsib.parentNode.insertBefore(get_allclient_list_block,elsib)
+            var elmail_usr = localStorage.getItem('me')
+            var eee = atob(localStorage.getItem('me'))
+            // if(localStorage.getItem('client_domain') != undefined){
+            //     if(localStorage.getItem('client_domain').indexOf('increasingly') >= 0){
+            //         eee = 'lindsay.costa@wickes.co.uk'
+            //     }
+            // }
+            var param = { emailId: eee};
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://cms.increasingly.com/Clients', true);
+            xhr.setRequestHeader("content-type","application/json");
+            xhr.send(JSON.stringify(param));
+            xhr.onload = function () { }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    var reporting_ul = document.querySelector('.get_allclient_list_dropdown')
+                    if(xhr.responseText != ""){
+                        var client_json=JSON.parse(xhr.responseText)
+                        if(client_json.ClientDetails != undefined){
+                            var clientdetails = sortByKey(client_json.ClientDetails, 'firstName')
+                            for(a=0;a<clientdetails.length;a++){
+                                if(a == 0){
+                                    var li_list1 = document.createElement('li')
+                                    li_list1.classList.add('reporting_li_dropdown')
+                                    var size_input_div = generate_html_tag("div", "size_input_div");
+                                    var size_input = generate_html_tag("input", "size_input");
+                                    size_input.setAttribute('type', 'text')
+                                    size_input.setAttribute('id', 'inc_searchInput')
+                                    size_input.setAttribute('placeholder', 'Search client here');
+                                    size_input_div.appendChild(size_input)
+                                    var elselectclient=document.querySelector('.client_list_text')
+                                    li_list1.appendChild(size_input_div)
+                                    size_input.addEventListener('click', function(elm) {
+                                        document.querySelector('.get_allclient_list').classList.add('active')
+                                    })
+                                    size_input.addEventListener('keyup', function(elm) {
+                                        var searchValue = jQuery(this).val();
+                                        var elms = elm.currentTarget
+                                        searchAndFilter(searchValue, elms)
+                                    });
+                                    reporting_ul.appendChild(li_list1)
+                                }
+                                if(reporting_ul.querySelector('.reporting_li_dropdown[fnm="'+clientdetails[a].firstName+'"]') != null){
+                                    var clientexistel=reporting_ul.querySelector('.reporting_li_dropdown[fnm="'+clientdetails[a].firstName+'"]')
+                                    var clid = clientexistel.getAttribute('clientid')
+                                    var clid_N = clid +","+ clientdetails[a].clientId
+                                    clientexistel.setAttribute('clientid',clid_N)
+                                    var apik = clientexistel.getAttribute('api_key')
+                                    var apik_N = apik +","+ clientdetails[a].apiKey
+                                    clientexistel.setAttribute('api_key',apik_N)
+                                }else{
+                                    var li_list = document.createElement('li')
+                                    li_list.classList.add('reporting_li_dropdown')
+                                    // if(clientdetails[a].firstName.indexOf('Supersmart') >= 0){
+                                    //     li_list.innerText = "Supersmart"  + " " + clientdetails[a].lastName
+                                    // }else if(clientdetails[a].firstName.indexOf('Workshop') >= 0){
+                                    //     li_list.innerText = clientdetails[a].firstName  + " " + clientdetails[a].lastName.split('-')[1]
+                                    // }else if(clientdetails[a].lastName.split(' ')[1] != undefined && clientdetails[a].lastName.split(' ')[1] != '-' && clientdetails[a].lastName.split(' ')[1] != 'in'){
+                                    //     if(clientdetails[a].lastName.split(' ')[1].length == 2 && clientdetails[a].firstName.indexOf(clientdetails[a].lastName.split(' ')[1]) == -1){
+                                    //         li_list.innerText = clientdetails[a].firstName  + " " + clientdetails[a].lastName.split(' ')[1]
+                                    //     }else{
+                                    //         li_list.innerText = clientdetails[a].firstName
+                                    //     }
+                                    // }else{
+                                    //     li_list.innerText = clientdetails[a].firstName
+                                    // }
+                                    li_list.innerText = clientdetails[a].firstName
+                                    
+                                    li_list.setAttribute('fNm',clientdetails[a].firstName)
+                                    li_list.setAttribute('RevenueType',clientdetails[a].revenueType)
+                                    li_list.setAttribute('ClientId',clientdetails[a].clientId)
+                                    li_list.setAttribute('ApiKey',clientdetails[a].apiKey)
+                                    li_list.setAttribute('api_key',clientdetails[a].apiKey)
+                                    li_list.setAttribute('userm',btoa(clientdetails[a].emailId))
+                                    
+                                    if(clientdetails[a].firstName == "Games Workshop - Australia"){
+                                        li_list.setAttribute('Region','UK')
+                                    }else{
+                                        li_list.setAttribute('Region',clientdetails[a].region)
+                                    }
+                                    li_list.addEventListener('click', function() {
+                                        if(this.parentNode.querySelector('li.active') != null){
+                                            this.parentNode.querySelector('li.active').classList.remove('active')
+                                        }
+                                        this.classList.add('active')
+                                        document.querySelector('.get_allclient_list').classList.remove('active')
+                                        document.querySelector('.client_list_text').innerText = this.innerText
+                                        document.querySelector('.client_list_text_error').innerText = ""
+                                        localStorage.setItem('client_selected',this.getAttribute('clientid'))
+                                        document.querySelector('.incProfile span').innerText = this.getAttribute('fNm')
+                                        document.querySelector('.homeHeaderTitleText').innerText = "Welcome "+this.getAttribute('fNm')+" !"
+                                        document.querySelector('.homeHeaderdesc').innerText = "Welcome to "+this.getAttribute('fNm')+". We inspire our customers to feel in control of their health. Whatever you are looking for you’ll find everything you need all in one place, here online."
+                                        var textsearch = ""
+                                    });
+                                    if(localStorage.getItem('client_details') != undefined){
+                                        var client_api_id = localStorage.getItem('client_details')
+                                        var client_id = client_api_id.split('-')[1]
+                                        if(client_id != undefined){
+                                            if(clientdetails[a].ClientId != client_id){
+                                                li_list.style.display="none"
+                                            }
+                                        }
+                                    }
+                                    reporting_ul.appendChild(li_list)
+                                }
+                                
+                            }
+                            var checkclientsel=false;
+                            var check_cl_client = setInterval(function(){
+                                if(localStorage.getItem('client_details') != undefined){
+                                    var client_api_id = localStorage.getItem('client_details')
+                                    var client_id = client_api_id.split('-')[1]
+                                    if(document.querySelector('.client_list_text').innerText.toLowerCase() == "select client" || document.querySelector('.client_list_text').innerText == "Select Client"){
+                                        if(client_id != undefined){
+                                            checkclientsel = true
+                                            if(document.querySelector('.reporting_li_dropdown[clientid="'+client_id.trim()+'"]') != null){
+                                                document.querySelector('.reporting_li_dropdown[clientid="'+client_id.trim()+'"]').click()
+                                                clearInterval(check_cl_client)
+                                            }else{
+                                                if(localStorage.getItem('client_domain') != undefined){
+                                                    if(localStorage.getItem('client_domain').indexOf('increasingly') >= 0){
+                                                        checkclientsel = true
+                                                        document.querySelector('.reporting_li_dropdown[revenuetype]').click()
+                                                    }
+                                                }
+                                                clearInterval(check_cl_client)
+                                            }
+                                        }else{
+                                            if(localStorage.getItem('client_domain') != undefined){
+                                                if(localStorage.getItem('client_domain').indexOf('increasingly') >= 0){
+                                                    checkclientsel = true
+                                                    document.querySelector('.reporting_li_dropdown[revenuetype]').click()
+                                                }
+                                            }
+                                            clearInterval(check_cl_client)
+                                        }
+                                    }
+                                }
+                            },300)
+                            setTimeout(function(){
+                                // if(checkclientsel == false){
+                                    var c_id=localStorage.getItem('client_selected')
+                                    if(document.querySelector('.reporting_li_dropdown[clientid="'+c_id+'"]') != null){
+                                        document.querySelector('.reporting_li_dropdown[clientid="'+c_id+'"]').click()
+                                    }
+                                    // if(document.querySelector('.client_list_text').innerText.toLowerCase() == "select client" || document.querySelector('.client_list_text').innerText == "Select Client"){
+                                        
+                                    // }
+                                // }
+                            },2000)
+                        }
+                    }
+                }
+            }
+
+            // var sel_clientelm = document.querySelector('.client_list_text')
+            // sel_clientelm.addEventListener('click', function() {
+            //     var flag_client=false
+            //     if(localStorage.getItem('client_details') != undefined){
+            //         var client_api_id = localStorage.getItem('client_details')
+            //         var client_id = client_api_id.split('-')[1]
+            //         if(client_id != undefined){
+            //             if(document.querySelector('.reporting_li_dropdown[clientid="'+client_id+'"]') != null){
+            //                 flag_client = true
+            //             }
+            //         }
+            //     }
+            //     if(flag_client == false){
+            //         removecssfromli()
+            //         this.parentNode.classList.add('active')
+            //     }
+            //     var check_cl_client1 = setInterval(function(){
+            //         if(localStorage.getItem('client_details') != undefined){
+            //             var client_api_id = localStorage.getItem('client_details')
+            //             var client_id = client_api_id.split('-')[1]
+            //             if(document.querySelector('.client_list_text').innerText.toLowerCase() == "select client" || document.querySelector('.client_list_text').innerText == "Select Client"){
+            //                 if(client_id != undefined){
+            //                     if(document.querySelector('.reporting_li_dropdown[clientid="'+client_id.trim()+'"]') != null){
+            //                         document.querySelector('.reporting_li_dropdown[clientid="'+client_id.trim()+'"]').click()
+            //                         clearInterval(check_cl_client1)
+            //                     }else{
+            //                         clearInterval(check_cl_client1)
+            //                     }
+            //                 }else{
+            //                     clearInterval(check_cl_client1)
+            //                 }
+            //             }
+            //         }
+            //     },0)
+            // });
+        }
+    </script>
+    <script src="plugins/common.js"></script>
+    <script src="plugins/dashboard.js"></script>
+</body>
+
+</html>

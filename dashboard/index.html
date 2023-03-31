@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="google-signin-client_id" content="761644971950-04p2c1i942tco8uade2obd08cfvvecc0.apps.googleusercontent.com">
+    <title>Increasingly Dashboard Login</title>
+    <link rel="shortcut icon" href="/Images/logo.svg">
+    <link href="./css/style.css" rel="stylesheet" />
+     
+<!-- <meta name="google-signin-client_id" content="817044644042-jteh807d9i7aq61knfj6ksf5jpg907uo.apps.googleusercontent.com"> -->
+    <script type="text/javascript" src="https://alcdn.msauth.net/lib/1.2.1/js/msal.js" integrity="sha384-9TV1245fz+BaI+VvCjMYL0YDMElLBwNS84v3mY57pXNOt6xcUYch2QLImaTahcOP" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      if(typeof Msal === 'undefined')document.write(unescape("%3Cscript src='https://alcdn.msftauth.net/lib/1.2.1/js/msal.js' type='text/javascript' integrity='sha384-m/3NDUcz4krpIIiHgpeO0O8uxSghb+lfBTngquAo2Zuy2fEF+YgFeP08PWFo5FiJ' crossorigin='anonymous'%3E%3C/script%3E"));
+    </script>
+  <meta name="google-signin-scope" content="https://www.google.com/m8/feeds/">
+  <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+  <style type="text/css">
+    .inc_google_icon{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <style>.abcRioButton{border-radius:1px;box-shadow:0 2px 4px 0 rgba(0,0,0,.25);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s,box-shadow .218s;transition:background-color .218s,border-color .218s,box-shadow .218s;-webkit-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;color:#262626;cursor:pointer;outline:none;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}.abcRioButton:hover{box-shadow:0 0 3px 3px rgba(66,133,244,.3)}.abcRioButtonBlue{background-color:#4285f4;border:none;color:#fff}.abcRioButtonBlue:hover{background-color:#4285f4}.abcRioButtonBlue:active{background-color:#3367d6}.abcRioButtonLightBlue{background-color:#fff;color:#757575}.abcRioButtonLightBlue:active{background-color:#eee;color:#6d6d6d}.abcRioButtonIcon{float:left}.abcRioButtonBlue .abcRioButtonIcon{background-color:#fff;border-radius:1px}.abcRioButtonSvg{display:block}.abcRioButtonContents{font-family:Roboto,arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:.21px;margin-left:6px;margin-right:6px;vertical-align:top}.abcRioButtonContentWrapper{height:100%;width:100%}.abcRioButtonBlue .abcRioButtonContentWrapper{border:1px solid transparent}.abcRioButtonErrorWrapper,.abcRioButtonWorkingWrapper{display:none;height:100%;width:100%}.abcRioButtonErrorIcon,.abcRioButtonWorkingIcon{margin-left:auto;margin-right:auto}.abcRioButtonErrorState,.abcRioButtonWorkingState{border:1px solid #d5d5d5;border:1px solid rgba(0,0,0,.17);box-shadow:0 1px 0 rgba(0,0,0,.05);color:#262626}.abcRioButtonErrorState:hover,.abcRioButtonWorkingState:hover{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);box-shadow:0 1px 0 rgba(0,0,0,.1)}.abcRioButtonErrorState:active,.abcRioButtonWorkingState:active{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);box-shadow:inset 0 1px 0 #ddd;color:#262626}.abcRioButtonWorkingState,.abcRioButtonWorkingState:hover{background-color:#f5f5f5}.abcRioButtonWorkingState:active{background-color:#e5e5e5}.abcRioButtonErrorState,.abcRioButtonErrorState:hover{background-color:#fff}.abcRioButtonErrorState:active{background-color:#e5e5e5}.abcRioButtonErrorState .abcRioButtonErrorWrapper,.abcRioButtonWorkingState .abcRioButtonWorkingWrapper{display:block}.abcRioButtonErrorState .abcRioButtonContentWrapper,.abcRioButtonErrorState .abcRioButtonWorkingWrapper,.abcRioButtonWorkingState .abcRioButtonContentWrapper{display:none} .-webkit-keyframes abcRioButtonWorkingIconPathSpinKeyframes {0% {-webkit-transform: rotate(0deg)}}</style>
+</head>
+
+<body>
+    <!-- Login Page -->
+    <div class="loginPage">
+        <div class="incContainer">
+            <!-- Login Form -->
+            <form>
+                <div class="formInfo">
+                    <div class="incLoginLogo">
+                        <img src="./Images/logo.svg" alt="" style="width: 100px;height: auto;">
+                    </div>
+                    <div class="incLoginTitle">Welcome to Increasingly’s Customer Success centre</div>
+                    <div class="incLoginTitleSm">Login Below To Start</div>
+                </div>
+                <!-- <div class="inputBox">
+                    <span>Username</span>
+                    <input type="text" class="incInputPrimary" name="email" id="email_input" placeholder="demo@example.com">
+                    <span class="email_error"></span>
+                </div>
+                <div class="inputBox">
+                    <span>Password</span>
+                    <input type="password" class="incInputPrimary" name="Password" id="password_input" placeholder="********">
+                    <span class="password_error"></span>
+                </div>
+                <div class="increasingly-form-submit">
+                    <a class="incButtonPrimary" id="sign_in_button">Login</a>
+                </div> -->
+
+                <script src="https://apis.google.com/js/platform.js?onload=onLoadGoogleCallback" async defer></script>
+                <div class="col-md-6 col-xl-6 google_block" style="margin-top: 20px;">
+                  <div class="inc_google_icon">
+                    <div id="my-signin2"><div style="height:50px;width:240px;" class="abcRioButton abcRioButtonBlue"><div class="abcRioButtonContentWrapper"><div class="abcRioButtonIcon" style="padding:15px"><div style="width:18px;height:18px;" class="abcRioButtonSvgImageWithFallback abcRioButtonIconImage abcRioButtonIconImage18"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg></div></div><span style="font-size:16px;line-height:48px;" class="abcRioButtonContents"><span id="not_signed_inpw2ibi8132a4" style="display: none;">Sign in with Google</span><span id="connectedpw2ibi8132a4" style="">Sign in with Google</span></span></div></div></div>
+                    
+                    <script src="https://apis.google.com/js/client:platform.js?onload=init" async defer></script>
+                    <script>
+                      function init() {
+                            gapi.load('auth2', function() {
+                                auth2 = gapi.auth2.init({
+                                    client_id: '761644971950-04p2c1i942tco8uade2obd08cfvvecc0.apps.googleusercontent.com',
+                                    cookiepolicy: 'single_host_origin',
+                                    scope: 'email',
+                                    plugin_name: 'PLUGIN'
+                                });
+                                element = document.getElementById('my-signin2');
+                                auth2.attachClickHandler(element, {}, onSignUp, onFailure);
+                            });
+                      }
+                      function onSignUp(googleUser) {
+                        var profile = googleUser.getBasicProfile();
+                        if(document.querySelector('#loader_block_inc') == null){
+                            showLoader()
+                        }
+                        var usreml = googleUser.getBasicProfile().getEmail()
+                        localStorage.setItem('me',btoa(usreml))
+                        var param_1 = {"emailId":btoa(usreml)}
+                        var xhr__ = new XMLHttpRequest();
+                        xhr__.open('POST', 'https://cms.increasingly.com/Login?emailId='+btoa(usreml)+'', true);
+                        xhr__.setRequestHeader('content-type', 'application/json');
+                        xhr__.onload = function () { 
+                          
+                        }
+                        xhr__.onerror = function () {
+                          hideLoader()
+                          console.log("error")
+                        };
+                        xhr__.getResponseHeader('Set-Cookie');
+                        xhr__.onreadystatechange = function () {
+                          if (xhr__.readyState === XMLHttpRequest.DONE && xhr__.status === 200) {
+                            if(xhr__.responseText != ""){
+                              var result = JSON.parse(xhr__.responseText)
+                              if(result.Status == "Success"){
+                                localStorage.setItem('login_type','user_password')
+                                localStorage.setItem('client_details',result.ApiKeyClientId)
+                                localStorage.setItem('client_domain',result.DomainName)
+                                localStorage.setItem('sessionExpire','false')
+                                localStorage.setItem('lotype','gm')
+                                hideLoader()
+                                window.location.href='https://app.increasingly.com/dashboard.html';
+                              }else{
+                                hideLoader()
+                                alert("Invalid User")
+                              }
+                            }
+                          }else if(xhr__.status == 401){
+                            if (xhr__.readyState === XMLHttpRequest.DONE) {
+                              if(xhr__.responseText != ""){
+                                  var result = JSON.parse(xhr__.responseText)
+                                  if(result.Status != "Success"){
+                                    hideLoader()
+                                    alert("Invalid User")
+                                  }
+                              }
+                            }
+                          }
+                        }
+                        xhr__.send(JSON.stringify(param_1));
+                      }
+                      function onFailure(error) {
+                        console.log(error);
+                      }
+                    </script>
+
+                    <!-- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
+                  </div>
+                  <div class="inc_ms_icon">
+                    <button type="button" id="signIn" class="btn btn-secondary" onclick="ms_signIn()">Sign in with Microsoft</button>
+                    <button type="button" id="signOut" class="btn btn-secondary" onclick="signOut()" style="display: none;">Sign out</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+        <div class="row" style="margin:auto">
+        <div id="card-div" class="col-md-3" style="display:none">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile and read your mails</h5>
+              <div id="profile-div"></div>
+              <br>
+              <br>
+              <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See Profile</button>
+              <br>
+              <br>
+              <button class="btn btn-primary" id="readMail" onclick="readMail()">Read Mails</button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="col-md-4">
+          <div class="list-group" id="list-tab" role="tablist">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="tab-content" id="nav-tabContent">
+          </div>
+        </div>
+      </div>
+        <div class="login_error" style="color:red;font-size:12px;"></div>
+        <div class="login_error_note"></div>
+        <!-- loginFooter -->
+        <div class="loginFooter">
+            <div class="incQuickLink">
+                <a href="https://www.increasingly.com/contact/">Contact </a>
+                <a href="https://www.increasingly.com/contact/">Support</a>
+            </div>
+            <div class="incCopyRights">
+                © 2022 Increasingly — All Rights Reserved
+            </div>
+        </div>
+    </div>
+    <!-- importing bootstrap.js and supporting js libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- importing app scripts (load order is important) -->
+    <script type="text/javascript" src="/ms_config/authConfig.js"></script>
+    <script type="text/javascript" src="/ms_config/graphConfig.js"></script>
+    <script type="text/javascript" src="/ms_config/ui.js"></script>
+
+    <!-- replace next line with authRedirect.js if you would like to use the redirect flow -->
+    <!-- <script type="text/javascript" src="./authRedirect.js"></script>   -->
+    <script type="text/javascript" src="/ms_config/authPopup.js"></script>
+    <script type="text/javascript" src="/ms_config/graph.js"></script>
+</body>
+
+<script>
+    setTimeout(function(){
+        function validateemail()  {  
+          var x=document.querySelector('#email_input').value;  
+          var p=document.querySelector('#password_input').value;
+          var atposition=x.indexOf("@");  
+          var dotposition=x.lastIndexOf(".");  
+          if(p == ""){
+            document.querySelector('.password_error').innerHTML = "Please enter password"
+            document.querySelector('.increasingly-popup-form').classList.add('eror')
+            document.querySelector('#password_input').setAttribute('style','border: 1.5px solid #c01a1a;')
+          }
+          if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+            // alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+            document.querySelector('.email_error').innerHTML = "Please enter a valid email address"
+            document.querySelector('#email_input').setAttribute('style','border: 1.5px solid #c01a1a;')
+            document.querySelector('.increasingly-popup-form').classList.add('eror')
+            return false;  
+          }  
+        }  
+        var password_inputel=document.querySelector('#password_input')
+        if(password_inputel != null){
+          password_inputel.addEventListener('click',function(){
+            if(document.querySelector('.password_error').innerHTML == "Please enter password"){
+              document.querySelector('.password_error').innerHTML = ""
+              document.querySelector('#password_input').setAttribute('style','')
+              document.querySelector('.increasingly-popup-form').classList.remove('eror')
+              document.querySelector('.login_error_note').innerHTML = ""
+            }
+          })
+        }
+        var email_inputel=document.querySelector('#email_input')
+        if(email_inputel != null){
+          email_inputel.addEventListener('click',function(){
+            if(document.querySelector('.email_error').innerHTML == "Please enter a valid email address"){
+              document.querySelector('.email_error').innerHTML = ""
+              document.querySelector('#email_input').setAttribute('style','')
+              document.querySelector('.increasingly-popup-form').classList.remove('eror')
+              document.querySelector('.login_error_note').innerHTML = ""
+            }
+          })
+        }
+        var submit_btn=document.querySelector('.increasingly-form-submit')
+        if(submit_btn != null){
+        submit_btn.addEventListener('click',function(){
+          validateemail()
+          if(document.querySelector('.increasingly-popup-form.eror') == null){
+            var email_user=document.querySelector('#email_input').value;
+            var pwd=document.querySelector('#password_input').value;
+            localStorage.setItem('me',btoa(email_user))
+            var email_dec=btoa(email_user)
+            var password_decod=pwd
+            var param = { password: pwd};
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://cms.increasingly.com/encryptPassword', true);
+            xhr.setRequestHeader('content-type', 'application/json');
+            xhr.onload = function () { }
+            xhr.onerror = function () {
+              console.log("error")
+            };
+            xhr.getResponseHeader('Set-Cookie');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                  if(xhr.responseText != ""){
+                    var result_ = JSON.parse(xhr.responseText)
+                    if(result_.Status == "Success"){
+                        var encrptpwd=result_.EncryptedPassword
+                        var param_ = {"emailId":email_dec, "password": encrptpwd}
+                        var xhr_ = new XMLHttpRequest();
+                        xhr_.open('POST', 'https://cms.increasingly.com/Login?emailId='+email_dec+'&password='+encrptpwd+'', true);
+                        xhr_.setRequestHeader('content-type', 'application/json');
+                        xhr_.onload = function () { }
+                        xhr_.onerror = function () {
+                          console.log("error")
+                        };
+                        xhr_.getResponseHeader('Set-Cookie');
+                        xhr_.onreadystatechange = function () {
+                            if (xhr_.readyState === XMLHttpRequest.DONE && xhr_.status === 200) {
+                              if(xhr_.responseText != ""){
+                                var result = JSON.parse(xhr_.responseText)
+                                if(result.Status == "Success"){
+                                  localStorage.setItem('login_type','user_password')
+                                  localStorage.setItem('client_details',result.ApiKeyClientId)
+                                  localStorage.setItem('client_domain',result.DomainName)
+                                  localStorage.setItem('sessionExpire','false')
+                                  window.location.href='https://app.increasingly.com/dashboard.html';
+                                }else{
+                                  hideLoader()
+                                  alert("Invalid User")
+                                }
+                              }
+                            }else if(xhr_.status == 401){
+                              if (xhr_.readyState === XMLHttpRequest.DONE) {
+                                if(xhr_.responseText != ""){
+                                  var result = JSON.parse(xhr_.responseText)
+                                  if(result.Status != "Success"){
+                                    hideLoader()
+                                    alert("Invalid User")
+                                  }
+                                }
+                              }
+                            }
+                        }
+                        xhr_.send(JSON.stringify(param_));
+                    }
+                  }
+                }
+            }
+            xhr.send(JSON.stringify(param));
+            
+          }
+        })
+      }
+    },2000)
+  </script>
+</html>
+<script src="plugins/common.js"></script><!DOCTYPE html>

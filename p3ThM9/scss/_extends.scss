@@ -1,0 +1,770 @@
+//LEFT ARROW
+%inc_Left_tArrow{
+    background: transparent url(../images/inc_sprite.svg) -36px -256px/160px no-repeat;
+    @include height_width(35px,35px);
+    cursor: pointer;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: transparent url(../images/inc_sprite.svg) -96px -216px/283px no-repeat;
+   }
+}
+
+
+
+//RIGHT ARROW
+%inc_Right_Arrow {
+    background: transparent url(../images/inc_sprite.svg) -65px -256px/160px no-repeat;
+    @include height_width(35px,35px);
+    cursor: pointer;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: transparent url(../images/inc_sprite.svg) -128px -216px/283px no-repeat;
+   }
+
+}
+
+//PLUS ICON
+%inc_Plus_Icon{
+    background: transparent url(../images/inc_sprite.svg) -73px -131px/300px no-repeat;
+    @include height_width(40px,40px);
+}
+
+
+//UNCHECK ICON
+%inc_Uncheck_Icon{
+    background: transparent url(../images/inc_sprite.svg) -60px -108px/250px no-repeat;
+    @include height_width(35px,35px);
+
+}
+
+//CHECK ICON
+%inc_Check_Icon{
+    background:  transparent url(../images/inc_sprite.svg) 3px -108px/250px no-repeat;
+    @include height_width(35px,35px);
+
+}
+
+//EDIT ICON
+%inc_Edit_Icon{
+    background: transparent url(../images/inc_sprite.svg) -307px -82px/340px no-repeat;
+    @include height_width(25px,25px);
+    cursor: pointer;
+
+}
+
+//DELETE ICON
+%inc_Delete_Icon{
+    background: transparent url(../images/inc_sprite.svg) -215px -75px/310px no-repeat;
+    @include height_width(25px,25px);
+    cursor: pointer;
+
+}
+
+//CLOSE ICON
+%inc_Close_Icon{
+    background: transparent url(../images/inc_sprite.svg) -216px -1px/310px no-repeat;
+    @include height_width(25px,25px);
+    cursor: pointer;
+
+}
+
+//CART ICON
+%inc_Cart_Icon{
+    background: transparent url(../images/inc_sprite.svg) -207px -586px/300px no-repeat;
+    @include height_width(35px,35px);
+
+}
+
+//ZOOM ICON
+%inc_Zoom_Icon{
+    background: transparent url(../images/inc_sprite.svg) -194px -253px/280px no-repeat;
+    @include height_width(25px,25px);
+    cursor: pointer;
+
+}
+
+.button{
+    @extend %inc_Qty_Plus;
+}
+//QTY PLUS
+%inc_Qty_Plus{
+    background: transparent url(../images/inc_sprite.svg) -17px -75px/130px no-repeat;
+    @include height_width(32px,40px);
+    cursor: pointer;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: transparent url(../images/inc_sprite.svg) -17px -75px/130px no-repeat;
+   }
+}
+
+//QTY MINUS
+%inc_Qty_Minus{
+    background: transparent url(../images/inc_sprite.svg) -52px -111px/138px no-repeat;
+    @include height_width(32px,40px);
+    cursor: pointer;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background: transparent url(../images/inc_sprite.svg) -52px -111px/138px no-repeat;
+   }
+}
+
+//SIDEBAR CHECK ICON
+%inc_Sidebar_Check_Icon{
+    background: transparent url(../images/inc_sprite.svg) -177px 1px/200px no-repeat;
+    @include height_width(20px,20px);
+}
+
+
+//LOADER GIF
+%inc_Loader{
+    background:transparent url(../images/loading.gif) center center / 40px no-repeat;
+    @include height_width(40px,40px);
+    opacity: 0;
+}
+
+
+//Button animate
+%button_animate {
+    transition: all .45s ease-Out;
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        background: #fafafa;
+        position: absolute;
+        transition: all .2s ease-Out;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+    }
+    &:hover{
+        color: $black;
+        background: $white;
+        border: 1px solid $black;
+        &:after{
+            transform: scale(1);
+            opacity: 0.1;
+        }
+    }
+}
+
+
+
+//Ratings
+.inc_product_desc_ratings_block {
+    margin-bottom: 10px;
+    font-size: 18px;
+     @include padding(0, 0, 10px, 0);
+     @include height_width(null, null);
+     min-height: 18px;
+     text-align: right;
+     color: #eee;
+ 
+     @include padding(0, 0, 0, 0);
+     @include margin(4px, 0, 4px, 0);
+     position: relative;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     justify-content: flex-end;
+     align-items: center;
+     flex-flow: row;
+     
+    max-width: 200px;
+    @include media_query("820","max"){
+        align-items: baseline;
+        max-width: 100%;
+    }
+ 
+     @include media_query("769") {
+        
+     }
+ 
+     &:after,
+     &:before {
+         content: "";
+         display: flex;
+     }
+ 
+     span {
+         float: none;
+     }
+ 
+     &.rating_0-0 {
+ 
+ 
+         .rating_count {
+             color: #eee;
+         }
+ 
+     }
+ 
+     .rating_count {
+         color: #010101;
+         @include padding(5px, 4px, 0, 3px);
+    
+         font-size: 14px;
+         line-height: 14px;
+         font-weight: 600;
+         @include media_query("820", "max") {
+             font-size: 12px; 
+             @include padding(0, 4px, 0, 3px);
+         }
+         
+     }
+ 
+     .rating_avg {
+        
+         color: #706e6b;
+         font-size: 18px;
+         line-height: 18px;
+     }
+ 
+     .rating_stars {
+         //color: #e3328b; 
+     }
+     .reviews{
+        width: 100% !important;
+        background: transparent !important;
+        // display: flex !important;
+        border: none !important;
+        padding: 0  !important;
+        max-height: max-content  !important;
+         overflow-y: visible !important;color: #343334;
+         width: auto;
+         font-family: $font_family_plp_2;
+         font-weight: 300;
+         line-height: 1.5;
+         font-size: 12px;
+         color:#666666;
+         display: none;
+
+     }
+     .pdp-video-wrapper{
+         display: none;
+     }
+     &>span {
+         &:last-of-type {
+             position: relative;
+             margin-right: 4px;
+ 
+             @include media_query("769") {
+                 margin-right: 2px;
+             }
+ 
+             &:before {
+                 @include height_width(27px, 0);
+                 @include positioning(absolute, 1px, null, null, 0);
+                 color: #FBD55F;
+                 font-family: 'BVCustom';
+                 display: flex;
+                 content: '\2605\2605\2605\2605\2605';
+                 overflow: hidden;
+             }
+         }
+     }
+ 
+     &.rating_0-0>span:last-of-type::before {
+         @include height_width(null, 0%);
+     }
+ 
+     &.rating_0-1>span:last-of-type::before {
+         @include height_width(null, 2%);
+     }
+ 
+     &.rating_0-2>span:last-of-type::before {
+         @include height_width(null, 4%);
+     }
+ 
+     &.rating_0-3>span:last-of-type::before {
+         @include height_width(null, 6%);
+     }
+ 
+     &.rating_0-4>span:last-of-type::before {
+         @include height_width(null, 8%);
+     }
+ 
+     &.rating_0-5>span:last-of-type::before {
+         @include height_width(null, 10%);
+     }
+ 
+     &.rating_0-6>span:last-of-type::before {
+         @include height_width(null, 12%);
+     }
+ 
+     &.rating_0-7>span:last-of-type::before {
+         @include height_width(null, 14%);
+     }
+ 
+     &.rating_0-8>span:last-of-type::before {
+         @include height_width(null, 16%);
+     }
+ 
+     &.rating_0-9>span:last-of-type::before {
+         @include height_width(null, 18%);
+     }
+ 
+     &.rating_1-0>span:last-of-type::before {
+         @include height_width(null, 20%);
+     }
+ 
+     &.rating_1-1>span:last-of-type::before {
+         @include height_width(null, 22%);
+     }
+ 
+     &.rating_1-2>span:last-of-type::before {
+         @include height_width(null, 24%);
+     }
+ 
+     &.rating_1-3>span:last-of-type::before {
+         @include height_width(null, 26%);
+     }
+ 
+     &.rating_1-4>span:last-of-type::before {
+         @include height_width(null, 28%);
+     }
+ 
+     &.rating_1-5>span:last-of-type::before {
+         @include height_width(null, 30%);
+     }
+ 
+     &.rating_1-6>span:last-of-type::before {
+         @include height_width(null, 32%);
+     }
+ 
+     &.rating_1-7>span:last-of-type::before {
+         @include height_width(null, 34%);
+     }
+ 
+     &.rating_1-8>span:last-of-type::before {
+         @include height_width(null, 36%);
+     }
+ 
+     &.rating_1-9>span:last-of-type::before {
+         @include height_width(null, 38%);
+     }
+ 
+     &.rating_2-0>span:last-of-type::before {
+         @include height_width(null, 40%);
+     }
+ 
+     &.rating_2-1>span:last-of-type::before {
+         @include height_width(null, 42%);
+     }
+ 
+     &.rating_2-2>span:last-of-type::before {
+         @include height_width(null, 44%);
+     }
+ 
+     &.rating_2-3>span:last-of-type::before {
+         @include height_width(null, 46%);
+     }
+ 
+     &.rating_2-4>span:last-of-type::before {
+         @include height_width(null, 48%);
+     }
+ 
+     &.rating_2-5>span:last-of-type::before {
+         @include height_width(null, 50%);
+     }
+ 
+     &.rating_2-6>span:last-of-type::before {
+         @include height_width(null, 52%);
+     }
+ 
+     &.rating_2-7>span:last-of-type::before {
+         @include height_width(null, 54%);
+     }
+ 
+     &.rating_2-8>span:last-of-type::before {
+         @include height_width(null, 56%);
+     }
+ 
+     &.rating_2-9>span:last-of-type::before {
+         @include height_width(null, 58%);
+     }
+ 
+     &.rating_3-0>span:last-of-type::before {
+         @include height_width(null, 60%);
+     }
+ 
+     &.rating_3-1>span:last-of-type::before {
+         @include height_width(null, 62%);
+     }
+ 
+     &.rating_3-2>span:last-of-type::before {
+         @include height_width(null, 64%);
+     }
+ 
+     &.rating_3-3>span:last-of-type::before {
+         @include height_width(null, 66%);
+     }
+ 
+     &.rating_3-4>span:last-of-type::before {
+         @include height_width(null, 68%);
+     }
+  
+     &.rating_3-5>span:last-of-type::before {
+         @include height_width(null, 70%);
+     }
+ 
+     &.rating_3-6>span:last-of-type::before {
+         @include height_width(null, 72%);
+     }
+ 
+     &.rating_3-7>span:last-of-type::before {
+         @include height_width(null, 74%);
+     }
+ 
+     &.rating_3-8>span:last-of-type::before {
+         @include height_width(null, 76%);
+     }
+ 
+     &.rating_3-9>span:last-of-type::before {
+         @include height_width(null, 78%);
+     }
+ 
+     &.rating_4-0>span:last-of-type::before {
+         @include height_width(null, 80%);
+     }
+ 
+     &.rating_4-1>span:last-of-type::before {
+         @include height_width(null, 82%);
+     }
+ 
+     &.rating_4-2>span:last-of-type::before {
+         @include height_width(null, 84%);
+     }
+ 
+     &.rating_4-3>span:last-of-type::before {
+         @include height_width(null, 86%);
+     }
+ 
+     &.rating_4-4>span:last-of-type::before {
+         @include height_width(null, 88%);
+     }
+ 
+     &.rating_4-5>span:last-of-type::before {
+         @include height_width(null, 90%);
+     }
+ 
+     &.rating_4-6>span:last-of-type::before {
+         @include height_width(null, 92%);
+     }
+ 
+     &.rating_4-7>span:last-of-type::before {
+         @include height_width(null, 94%);
+     }
+ 
+     &.rating_4-8>span:last-of-type::before {
+         @include height_width(null, 96%);
+     }
+ 
+     &.rating_4-9>span:last-of-type::before {
+         @include height_width(null, 98%);
+     }
+ 
+     &.rating_5-0>span:last-of-type::before {
+         @include height_width(null, 100%);
+     }
+ }
+
+
+ .inc_collection_Rating_block,
+ .inc_collection_rating_block {
+    font-size: 20px;
+     @include padding(0, 0, 10px, 0);
+     @include height_width(null, null);
+     min-height: 18px;
+     text-align: right;
+     color: #cccccc; 
+     @include padding(0, 0, 0, 0);
+     @include margin(4px, 0, 4px, 0);
+     position: relative;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     justify-content: flex-end;
+     align-items: center;
+     flex-flow: row-reverse;
+    margin-bottom: 10px;
+    display: none;
+
+ 
+     @include media_query("769") {
+        
+     }
+ 
+     &:after,
+     &:before {
+         content: "";
+         display: flex;
+     }
+ 
+     span {
+         float: none;
+     }
+ 
+     &.rating_0-0 {
+ 
+ 
+         .rating_count {
+             color: #eee;
+         }
+ 
+     }
+ 
+     .rating_count {
+         color: #010101;
+         @include padding(5px, 4px, 0, 3px);
+    
+         font-size: 14px;
+         line-height: 14px;
+         font-weight: 600;
+         @include media_query("820", "max") {
+             font-size: 12px; 
+             @include padding(0, 4px, 0, 3px);
+         }
+         
+     }
+ 
+     .rating_avg {
+        
+         color: #706e6b;
+         font-size: 18px;
+         line-height: 18px;
+     }
+ 
+     .rating_stars {
+         //color: #e3328b; 
+     }
+ 
+     &>span {
+         &:last-of-type {
+             position: relative;
+             margin-right: 4px;
+ 
+             @include media_query("769") {
+                 margin-right: 2px;
+             }
+ 
+             &:before {
+                 @include height_width(27px, 0);
+                 @include positioning(absolute, 0px, null, null, 0);
+                 color: #000000;
+                 font-family: 'BVCustom';
+                 display: flex;
+                 content: '\2605\2605\2605\2605\2605';
+                 overflow: hidden;
+             }
+         }
+     }
+ 
+     &.rating_0-0>span:last-of-type::before {
+         @include height_width(null, 0%);
+     }
+ 
+     &.rating_0-1>span:last-of-type::before {
+         @include height_width(null, 2%);
+     }
+ 
+     &.rating_0-2>span:last-of-type::before {
+         @include height_width(null, 4%);
+     }
+ 
+     &.rating_0-3>span:last-of-type::before {
+         @include height_width(null, 6%);
+     }
+ 
+     &.rating_0-4>span:last-of-type::before {
+         @include height_width(null, 8%);
+     }
+ 
+     &.rating_0-5>span:last-of-type::before {
+         @include height_width(null, 10%);
+     }
+ 
+     &.rating_0-6>span:last-of-type::before {
+         @include height_width(null, 12%);
+     }
+ 
+     &.rating_0-7>span:last-of-type::before {
+         @include height_width(null, 14%);
+     }
+ 
+     &.rating_0-8>span:last-of-type::before {
+         @include height_width(null, 16%);
+     }
+ 
+     &.rating_0-9>span:last-of-type::before {
+         @include height_width(null, 18%);
+     }
+ 
+     &.rating_1-0>span:last-of-type::before {
+         @include height_width(null, 20%);
+     }
+ 
+     &.rating_1-1>span:last-of-type::before {
+         @include height_width(null, 22%);
+     }
+ 
+     &.rating_1-2>span:last-of-type::before {
+         @include height_width(null, 24%);
+     }
+ 
+     &.rating_1-3>span:last-of-type::before {
+         @include height_width(null, 26%);
+     }
+ 
+     &.rating_1-4>span:last-of-type::before {
+         @include height_width(null, 28%);
+     }
+ 
+     &.rating_1-5>span:last-of-type::before {
+         @include height_width(null, 30%);
+     }
+ 
+     &.rating_1-6>span:last-of-type::before {
+         @include height_width(null, 32%);
+     }
+ 
+     &.rating_1-7>span:last-of-type::before {
+         @include height_width(null, 34%);
+     }
+ 
+     &.rating_1-8>span:last-of-type::before {
+         @include height_width(null, 36%);
+     }
+ 
+     &.rating_1-9>span:last-of-type::before {
+         @include height_width(null, 38%);
+     }
+ 
+     &.rating_2-0>span:last-of-type::before {
+         @include height_width(null, 40%);
+     }
+ 
+     &.rating_2-1>span:last-of-type::before {
+         @include height_width(null, 42%);
+     }
+ 
+     &.rating_2-2>span:last-of-type::before {
+         @include height_width(null, 44%);
+     }
+ 
+     &.rating_2-3>span:last-of-type::before {
+         @include height_width(null, 46%);
+     }
+ 
+     &.rating_2-4>span:last-of-type::before {
+         @include height_width(null, 48%);
+     }
+ 
+     &.rating_2-5>span:last-of-type::before {
+         @include height_width(null, 50%);
+     }
+ 
+     &.rating_2-6>span:last-of-type::before {
+         @include height_width(null, 52%);
+     }
+ 
+     &.rating_2-7>span:last-of-type::before {
+         @include height_width(null, 54%);
+     }
+ 
+     &.rating_2-8>span:last-of-type::before {
+         @include height_width(null, 56%);
+     }
+ 
+     &.rating_2-9>span:last-of-type::before {
+         @include height_width(null, 58%);
+     }
+ 
+     &.rating_3-0>span:last-of-type::before {
+         @include height_width(null, 60%);
+     }
+ 
+     &.rating_3-1>span:last-of-type::before {
+         @include height_width(null, 62%);
+     }
+ 
+     &.rating_3-2>span:last-of-type::before {
+         @include height_width(null, 64%);
+     }
+ 
+     &.rating_3-3>span:last-of-type::before {
+         @include height_width(null, 66%);
+     }
+ 
+     &.rating_3-4>span:last-of-type::before {
+         @include height_width(null, 68%);
+     }
+ 
+     &.rating_3-5>span:last-of-type::before {
+         @include height_width(null, 70%);
+     }
+ 
+     &.rating_3-6>span:last-of-type::before {
+         @include height_width(null, 72%);
+     }
+ 
+     &.rating_3-7>span:last-of-type::before {
+         @include height_width(null, 74%);
+     }
+ 
+     &.rating_3-8>span:last-of-type::before {
+         @include height_width(null, 76%);
+     }
+ 
+     &.rating_3-9>span:last-of-type::before {
+         @include height_width(null, 78%);
+     }
+ 
+     &.rating_4-0>span:last-of-type::before {
+         @include height_width(null, 80%);
+     }
+ 
+     &.rating_4-1>span:last-of-type::before {
+         @include height_width(null, 82%);
+     }
+ 
+     &.rating_4-2>span:last-of-type::before {
+         @include height_width(null, 84%);
+     }
+ 
+     &.rating_4-3>span:last-of-type::before {
+         @include height_width(null, 86%);
+     }
+ 
+     &.rating_4-4>span:last-of-type::before {
+         @include height_width(null, 88%);
+     }
+ 
+     &.rating_4-5>span:last-of-type::before {
+         @include height_width(null, 90%);
+     }
+ 
+     &.rating_4-6>span:last-of-type::before {
+         @include height_width(null, 92%);
+     }
+ 
+     &.rating_4-7>span:last-of-type::before {
+         @include height_width(null, 94%);
+     }
+ 
+     &.rating_4-8>span:last-of-type::before {
+         @include height_width(null, 96%);
+     }
+ 
+     &.rating_4-9>span:last-of-type::before {
+         @include height_width(null, 98%);
+     }
+ 
+     &.rating_5-0>span:last-of-type::before {
+         @include height_width(null, 100%);
+     }
+ }
+
+ .c-header--sticky {
+    z-index: 99999999999999999999999999;
+}

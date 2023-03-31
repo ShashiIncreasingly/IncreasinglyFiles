@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increasingly Dashboard</title>
+    <link rel="shortcut icon" href="./Images/logo.svg">
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="./data.js"></script>
+</head>
+
+<body class="overflowHidden collectionList">
+    <!--Sidemenu-->
+    <aside class="sideMenu ">
+        <div class="incLogo">
+            <img src="./Images/logo.svg" alt="">
+        </div>
+        <ul class="sideMenuLinks">
+            <li class="links-item "><a href="./dashboard.html"><img src="./Images/home.svg">
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="links-item active"><a href="./reporting.html"><img src="./Images/report.svg">
+                    <span>Reporting</span></a></li>
+            <li class="links-item "><a href="./createCollection.html"><img src="./Images/collection.svg">
+                    <span>Collection</span></a></li>
+            <li class="links-item"> <a href="#"><img src="./Images/bundle.svg"> <span>Bundle Operation</span></a></li>
+            <li class="links-item logOut"><a href="#" onclick="signOut()"><img src=" ./Images/logout.svg">
+                    <span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <div class="mainWrapper">
+        <!--Header-->
+        <header>
+            <div class="incToggle" id="incToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="incHeaderLinks">
+                <ul>
+                    <li class="incNotification"><img src="./Images/notification.svg" alt=""></li>
+                    <li class="incProfile"><img src="./Images/person.svg"> <span> Hi Admin</span></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="collectionWrapper collectionWrapperFlex">
+            <iframe width="100%" height="80vh" style="height: 90vh;"
+                src="https://datastudio.google.com/embed/reporting/1eOuqwa_mKsc1mGkaGIyWCqVbmU5_GZS4/page/iV3w"
+                frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="plugins/common.js"></script>
+</body>
+
+</html>

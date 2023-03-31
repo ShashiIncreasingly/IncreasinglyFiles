@@ -1,0 +1,240 @@
+.publish_collection_block {
+  position: relative;
+  height: calc(100% - 16%);
+  background: $backgoundLight;
+  border: 1px solid $borderColor2;
+  @media screen and (max-height: 920px) {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #ebebeb;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: #6d6d6d;
+    }
+  }
+  .publish_collection_wrapper {
+    padding: 20px 30px;
+    .publish_col_heading {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: $fontColor;
+      margin-bottom: 10px;
+      color: #ff0000;
+    }
+    .publish_collection_item {
+      .collection_block {
+        &.first_empty_collection_block {
+          .collection_box_block {
+            display: flex;
+            background: $white;
+            box-shadow: 0px 0px 5px #e5e5e5;
+            border-radius: 4px;
+            padding: 20px;
+            width: max-content;
+            .collection_wrapper_first {
+              .collection_wrapper {
+                .collection_box {
+                  .collection_prod_container {
+                    background: $white;
+                    border: 1px solid $borderColor2;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    max-height: 280px;
+                    min-height: 280px;
+                    min-width: 245px;
+                    margin-right: 10px;
+                    &.empty {
+                    }
+                  }
+                }
+              }
+            }
+            .collection_wrapper_second {
+              display: flex;
+              flex-direction: column;
+              .collection_wrapper {
+                .collection_box {
+                  .collection_prod_container {
+                    max-height: 90px;
+                    max-width: 90px;
+                    min-height: 90px;
+                    min-width: 90px;
+                    border: 1px solid #e4eded;
+                    display: block;
+                    margin-bottom: 5px;
+                    margin-right: 0px;
+                    &.empty {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .collection_prod_button_block {
+            .collection_prod_button_wrapper {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-top: 20px;
+              .collection_prod_text {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 22px;
+                color: $fontColor;
+                padding-right: 10px;
+              }
+              .collection_prod_price {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .activeprice {
+                  font-weight: 600;
+                  font-size: 16px;
+                  line-height: 18px;
+                  color: $fontColor;
+                  opacity: 0.6;
+                  padding-right: 10px;
+                }
+                .regularprice {
+                  font-weight: 600;
+                  font-size: 16px;
+                  line-height: 18px;
+                  color: $fontColor;
+                  opacity: 0.6;
+                }
+              }
+            }
+          }
+        }
+      }
+      .collection_name {
+        margin-top: 40px;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 19px;
+          color: $fontColor;
+        }
+        .input_collection_name {
+          background: $white;
+          border: 1px solid $borderColor2;
+          box-sizing: border-box;
+          border-radius: 3px;
+          width: 100%;
+          padding: 10px;
+          font-size: 14px;
+          line-height: 19px;
+          color: rgba(0, 0, 0, 0.2);
+          min-height: 42px;
+          margin-top: 5px;
+        }
+      }
+      .plecement_promo_block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .collection_placement {
+          flex-basis: 48%;
+          p {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            color: $fontColor;
+          }
+          .input_collection_placement {
+            background: $white;
+            border: 1px solid $borderColor2;
+            box-sizing: border-box;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 19px;
+            color: rgba(0, 0, 0, 0.2);
+            min-height: 42px;
+            margin-top: 5px;
+          }
+        }
+        .collection_promotion_message {
+          flex-basis: 48%;
+          p {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            color: $fontColor;
+          }
+          .input_collection_promo {
+            background: $white;
+            border: 1px solid $borderColor2;
+            box-sizing: border-box;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 19px;
+            color: rgba(0, 0, 0, 0.2);
+            min-height: 42px;
+            margin-top: 5px;
+          }
+        }
+      }
+      .note_block {
+        .note_text {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 19px;
+          color: $fontColor;
+        }
+      }
+    }
+    .publish_collection_button_block {
+      background: #575b63;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      // top: 100%;
+      right: 0;
+      // width: calc(100vw - 77.8%);
+      transition: 0.2s;
+      .publish_collection_save_draft_btn {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 34px;
+        text-transform: uppercase;
+        color: $white;
+        flex-basis: 50%;
+        text-align: center;
+        cursor: pointer;
+      }
+      .publish_collection_btn {
+        background: $primary;
+        border-radius: 3px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: $white;
+        flex-basis: 60%;
+        text-align: center;
+        padding: 11px;
+        cursor: pointer;
+        height: 40px;
+      }
+    }
+  }
+}

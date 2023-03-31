@@ -1,0 +1,394 @@
+
+//*--------------------------Product Card--------------------------*//
+
+//Prouduct card canvas
+%inc_product_card { 
+  @include padding(5px, 0px, 0px, 0px);
+  @include margin(5px, 5px, 5px, 5px);
+  @include height_width(auto, auto);
+  background: $white;
+
+ border:1px solid #e8e8e8; 
+  max-width: 240px;
+  min-width: 240px;
+  @include positioning(relative, null, null, null, null);
+  //Ipad
+ 
+
+  //Mobile
+  @include media_query("820", "max") { 
+    @include padding(15px, 15px, 15px, 15px);
+    max-width: 100%;
+    min-width: 100%;
+    @include margin(auto, auto, auto, auto);
+    @include flexbox;
+    @include flex-flow(inherit);
+    box-shadow: none;
+    border: none;
+  }
+  @include media_query("600", "max") { 
+    @include padding(15px, 1px, 15px, 1px);
+
+  }
+}
+
+
+//Gallery Dots
+%inc_product_card_gallery_item_dots{
+  @include margin(auto, 3px, auto, 3px);
+  min-width: 10px;
+  @include height_width(10px, 10px); 
+  @include radius(50%,50%,50%,50%); 
+  background: #eeeeee;
+  border:none;
+  // border:none; 
+}
+
+//Gallery dots active
+%inc_product_card_gallery_item_dots_active{
+  background: $black; 
+  border: none;
+}
+
+
+/* Product Card Header { No content } */
+
+//Product Featured Image wrap
+%inc_product_image_wrap { 
+
+  @include padding(0px, 10px, 0px, 10px);
+  @include margin(null, null, 5px, null);
+
+  @include positioning(relative, null, null, null, null);
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(35%);
+    @include padding(0, 10px, 0, 10px);
+    @include margin(null, null, 0, null);
+  }
+  @include media_query("350", "max") {
+    @include flex-basis(35%);
+
+  }
+}
+
+//Product Image inner
+%inc_product_image_inner {
+  @extend %inc_row_center;
+  @include height_width(150px, auto);
+  @include positioning(relative, null, null, null, null);
+  @include media_query("820", "max") {
+    @include height_width(235px, auto);
+
+  }
+}
+
+
+//Product Image value
+%inc_product_image {
+  @include height_width(95%,95%);
+  @include margin(auto, auto, auto, auto);
+  @include positioning(absolute, 0, 0, 0, 0);
+  max-width: 200px;
+  object-fit: contain;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: auto;
+  }
+  @include media_query("820", "max") {
+    max-width: 150px;
+    @include height_width(100%, 100%);
+
+  }
+
+
+  //Mobile
+  @include media_query("600", "max") {
+    max-width: 100px;
+
+  }
+}
+
+
+//Zoom icon Wrap
+%inc_image_zoom {
+  @include height_width(25px, 100%);
+  @include positioning(absolute, auto, auto, 10px, 0);
+  @include cursor(default);
+  // @include display(none); 
+
+}
+
+
+//Zoom icon Icon
+%inc_image_zoom_icon {
+  @include height_width(100%, 25px);
+  @include positioning(absolute, auto, auto, null, 10px);
+  background:  url(../images/inc_sprite.svg) -383px -71px/500px no-repeato;
+  cursor: pointer;
+
+}
+
+
+//Color pallate wrp
+%inc_image_color_pallate_wrap {
+  @include height_width(25px, auto);
+  @include radius(50px, 50px, 50px, 50px);
+  @include positioning(absolute, auto, 10px, null, auto);
+  background: $backface_color_1;
+  @include padding(0, 7px, 0, 7px);
+}
+
+
+//Coloe Pallate Item Wrap
+%inc_image_color_pallate_item_wrap {
+  @extend %inc_row;
+  @include height_width(25px, 100%);
+  @include align-items(center);
+  @include margin(null, 5px, null, null);
+}
+
+
+//Coloe Pallate Item
+%inc_image_color_pallate_item {
+  @include height_width(15px, 15px);
+  @include radius(50%, 50%, 50%, 50%);
+  border: 2px solid #fff;
+  @include box-shadow(0px, 1px, 3px, rgba(0, 0, 0, 0.1), false);
+  background-size: 100%;
+  @include display(none); 
+  overflow: hidden;
+}
+
+//Product Information
+
+//Product Description
+%inc_product_des_wrap {
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(65%);
+    @include padding(0, 10px, 0, 0px);
+  }
+  @include media_query("350", "max") {
+    @include flex-basis(65%);
+  }
+}
+
+//Product Title Wrap
+%inc_product_title_wrap {
+  @include margin(null, null, 10px, null);
+}
+
+//Product Title
+%inc_product_title_text {
+  @include font-weight(normal);
+  color: $black;
+  @include text-transform(capitalize);
+  @include text-decoration(none);
+  min-height: 40px;
+  max-height: 40px;
+  @include overflow(hidden);
+  @include display(block);
+  font-family:  $font_family;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  //Mobile
+  @include media_query("820", "max") {
+
+  }
+}
+
+
+//Product Price wrap
+%inc_product_price_wrap {
+  @extend %inc_row;
+  @include margin(null, null,10px, null);
+  @include align-items(flex-start);
+  @include flex-direction(column-reverse);
+  @include justify-content(center);
+  position: relative;
+  min-height: 55px;
+   //Mobile
+   @include media_query("820", "max") {
+
+  }
+}
+
+//Active price Wrap
+/*  %inc_active_price_wrap {
+
+    }*/
+
+//Active price text  -
+%inc_active_price_text {
+  @extend %inc_content_sm;
+  color: $black ;
+  // @include font-weight(600);
+  @include rhythm(23, 22);
+  font-family: $font_family_3;
+  display: flex;
+  align-items: center;
+  span{
+    font-size: 12px;
+    font-weight: 300;
+    font-family: $font_family_2;
+    color: #000000;
+    @include media_query("375","max"){
+      font-size: 10px ;
+    }
+    @include media_query("350","max"){
+      font-size: 9px;
+    }
+    &.price{
+      font-size: 23px;
+      font-family: $font_family_3;
+    }
+    &.inc{
+      margin-left: 4px;
+    }
+    &.now_was{
+      margin-right: 4px;
+    }
+  }
+}
+ 
+//Regular Price wrap - Old Price
+%inc_regular_price_wrap { 
+  @include margin(null, null, null, 0);
+  @include media_query("820","max"){
+    @include margin(null, 10px, null, 0);
+  }
+}
+
+
+//Regular Price text - Old Price 
+%inc_regular_price_text {
+  @extend %inc_content_sm; 
+  color: #000000;
+  @include rhythm(23, 22);
+  @include positioning(relative, null, null, null, null);
+  font-family: $font_family_3;
+  display: flex;
+  align-items: center;
+  // font-weight: 600;
+  @include margin(null,null,5px, null);
+
+  span{
+    font-size: 12px;
+    font-weight: 300;
+    font-family: $font_family_2;
+    color: #000000;
+    line-height: 12px;
+    @include media_query("375","max"){
+      font-size: 10px ;
+    }
+    @include media_query("350","max"){
+      font-size: 9px;
+    }
+    &.price{
+      font-size: 23px;
+      font-family: $font_family_3;
+      display: block;
+      position: relative;
+      &:after {
+        content: "";
+        @include height_width(1px, 100%);
+        @include positioning(absolute, 0, 0, 0, auto);
+        @include margin(auto, auto, auto, auto);
+        background: $text_color_1;
+        @include display(block);
+      }
+    }
+    &.inc{
+      margin-left: 4px;
+    }
+    &.now_was{
+      margin-right: 4px;
+    }
+  }
+  //Pesdo After
+ 
+}
+
+
+//Product Attributes
+%inc_product_attributes {
+  @extend %inc_row_center;
+  box-shadow:0px 0px 1px 1px #ddd;
+  @include height_width(40px, 100%); 
+  @include margin(null, null, 10px, null);
+  // @include cursor(pointer);
+  @include transition(0.2s);
+  @include positioning(relative, null, null, null, null);
+  cursor: pointer;
+  background: $white;
+  //Mobile
+  @include media_query("820", "max") {
+    max-width: 99%;
+    box-sizing:border-box; 
+    @include margin(null, null, 5px, null);
+  }
+  
+  
+
+  //Hover 
+  &:hover {
+    background: $canvas;
+    @include transition(0.2s);
+  }
+}
+
+
+// Product Attribute Edit
+
+%inc_product_edit{
+  @include positioning(absolute, 0, 0, 0,auto);
+  @include margin(auto,auto,auto,0);
+  @include height_width(40px, 67px);
+  @extend %inc_row_center;
+  background: $secondary_color;
+  color:$white; 
+  @include font-weight(400);
+  @include rhythm(14, 22);
+  font-family: $font_family_2;
+  text-transform: uppercase;
+  border-radius: 0px 2px 2px 0px;
+}
+
+
+
+
+//Product Attribute Titles Global
+%inc_product_attributes_titles_blobal {
+  @include margin(null, null, 10px, null);
+  @include padding(null, null, 10px, null);
+  @include border("bottom", 1px, solid, $border_color_1);
+}
+ 
+
+//Product Attribute color 
+%inc_product_attributes_color,
+%inc_product_attributes_size {
+  @extend %inc_content_sm;
+  color: $black;
+  @include font-weight(400); 
+  font-size: 14px;
+  @include text-transform(uppercase);
+  font-family: $font_family;
+}
+
+//shortn value
+%inc_shortn_value{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @include overflow(hidden); 
+  max-width: 110px; 
+  @include media_query("480", "max") {
+    max-width: 80px; 
+  }
+}
+
+//Product Attribute Size
+
+//Product Quantity 

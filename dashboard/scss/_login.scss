@@ -1,0 +1,96 @@
+.loginPage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: $white;
+  
+    .incContainer {
+      position: relative;
+      width: 460px;
+      min-height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $white;
+      box-shadow: 0px 0px 4px 2px #f5f5f5;
+      border-radius: 10px;
+      form {
+        position: relative;
+        width: 100%;
+        padding: 50px 50px 40px 50px;
+  
+        .formInfo {
+          text-align: center;
+          .incLoginLogo {
+            margin-bottom: 30px;
+          }
+          .incLoginTitle {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 34px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: $fontColor;
+          }
+          .incLoginTitleSm {
+            width: 100%;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            text-transform: uppercase;
+            color: $fontColor;
+          }
+        }
+  
+        .inputBox {
+          position: relative;
+          width: 100%;
+          margin-bottom: 20px;
+          span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            color: $fontColor;
+          }
+          .incButtonPrimary{
+            height: 48px;
+          }
+        }
+      }
+    }
+  
+    .loginFooter {
+      max-width: 90%;
+      min-width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid $borderColor3;
+      padding-top: 20px;
+      margin-top: 80px;
+      margin-bottom: 20px;
+      .incQuickLink , .incCopyRights {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 22px;
+          text-align: center;
+          color: $fontColor;
+          a{
+            color: $fontColor;
+            text-decoration: none;
+            margin-right: 10px;
+
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+      }
+    }
+  }
+  

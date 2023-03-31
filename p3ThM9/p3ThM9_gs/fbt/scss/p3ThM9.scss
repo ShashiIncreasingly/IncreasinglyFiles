@@ -1,0 +1,106 @@
+//Mixins
+@import '_mixins';
+//EXTENDs
+@import '_extends';
+//Product card style
+@import '_product';
+//Modal page  
+@import '_modal';
+//PDP style
+@import '_pdp';
+//Sidebar style 
+@import '__sidebar';
+//Cartpage 
+@import '_cart';
+
+.inc_overlay{ 
+    @include overflow(hidden);
+    @supports (-webkit-touch-callout: none) {
+        height: 100vh;
+    }
+    .back-to-top{
+        &.active{
+            z-index: -99;
+        }
+    }
+    body{
+        @include overflow(hidden);
+        @supports (-webkit-touch-callout: none) {
+            height: 100vh;
+        }
+    }
+    .pah.dth-wrapper{
+        z-index: 1;
+    }
+    @include media_query("820", "max"){
+        .checkout-combo, .checkout-combo__list{
+            z-index: -1 !important;
+            pointer-events: none !important;
+        }
+    }
+}
+.inc_minipopup{
+    @include media_query("820", "max"){
+        .inc_sidebar_modal_block{
+            overflow: hidden !important;
+        }
+    }
+}
+
+
+.inc_pdp_block,
+.inc_sidebar_modal_block,
+.inc_af_block{
+        *{
+            box-sizing: border-box;
+            font-family: "Museo", sans-serif !important;
+        }
+                /*** iPhone and iOS Form Input Zoom Fixes ***/
+        /* Fix Input Zoom on devices older than iPhone 5: */
+        @media screen and (device-aspect-ratio: 2/3) {
+            select, textarea, input[type="text"], input[type="password"],
+            input[type="datetime"], input[type="datetime-local"],
+            input[type="date"], input[type="month"], input[type="time"],
+            input[type="week"], input[type="number"], input[type="email"],
+            input[type="url"]{ font-size: 16px; }
+        }
+        /* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+        @media screen and (device-aspect-ratio: 40/71) {
+            select, textarea, input[type="text"], input[type="password"],
+            input[type="datetime"], input[type="datetime-local"],
+            input[type="date"], input[type="month"], input[type="time"],
+            input[type="week"], input[type="number"], input[type="email"],
+            input[type="url"]{ font-size: 16px; }
+        }
+        /* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+        @media screen and (device-aspect-ratio: 375/667) {
+            select, textarea, input[type="text"], input[type="password"],
+            input[type="datetime"], input[type="datetime-local"],
+            input[type="date"], input[type="month"], input[type="time"],
+            input[type="week"], input[type="number"], input[type="email"], 
+            input[type="tel"], input[type="url"]{ font-size: 16px; }
+        }
+        /* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+        @media screen and (device-aspect-ratio: 9/16) {
+            select, textarea, input[type="text"], input[type="password"],
+            input[type="datetime"], input[type="datetime-local"],
+            input[type="date"], input[type="month"], input[type="time"],
+            input[type="week"], input[type="number"], input[type="email"],
+            input[type="tel"], input[type="url"]{ font-size: 16px; }
+        }
+}
+
+.inc_bundles{
+    overflow-x: hidden !important;
+}
+
+.inc_pdp_product-main_block{
+    .bundle-disable{
+        display: none !important;
+    }
+}
+.inc_product_modal_block{
+    .bundle-disable{
+        display: none !important;
+    }
+}

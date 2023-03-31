@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increasingly Dashboard</title>
+    <link rel="shortcut icon" href="./Images/logo.svg">
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="./data.js"></script>
+</head>
+
+<body class="overflowHidden collectionList">
+    <div class="overlay "></div>
+    <!--Sidemenu-->
+    <aside class="sideMenu">
+        <div class="incLogo">
+            <img src="./Images/logo.svg" alt="">
+        </div>
+        <ul class="sideMenuLinks">
+            <li class="links-item">
+                <a href="./dashboard.html"><img src="./Images/home.svg"> <span>Dashboard</span></a>
+            </li>
+            <li class="links-item">
+                <a href="./reporting.html"><img src="./Images/report.svg"> <span>Reporting</span></a>
+            </li>
+            <li class="links-item active">
+                <a href="./createCollection.html"><img src="./Images/collection.svg">
+                    <span>Collection</span></a>
+            </li>
+            <li class="links-item">
+                <a href="#"><img src="./Images/bundle.svg"> <span>Bundle Operation</span></a>
+            </li>
+            <li class="links-item logOut">
+                <a href="#" onclick="signOut()"><img src="./Images/logout.svg">
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="mainWrapper">
+        <!--Header-->
+        <header>
+            <div class="incToggle" id="incToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="incHeaderLinks">
+                <ul>
+                    <li class="incNotification"><img src="./Images/notification.svg" alt=""></li>
+                    <li class="incProfile"><img src="./Images/person.svg"> <span> Hi Admin</span></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!--Create new collection header-->
+        <div class="collectionHeader">
+            <h2>Collections</h2>
+            <div class="buttonGroup">
+                <input type="text" class="incInputPrimary" placeholder="Search : Title , Category,SKU">
+                <button type="submit" class=""> <img src="./Images/search.svg"></button>
+            </div>
+            <div class="headerActions">
+                <button class="incButtonSecondary" id="viewAll">View All</button>
+                <button class="incButtonPrimary" id="createNew"><img src="./Images/plus.svg"><span>Create
+                        new</span></button>
+            </div>
+        </div>
+
+
+        <!--Filter Block-->
+        <div class="filter-block">
+            <select class="dropdown-one">
+                <option name="all" value="0">All</option>
+                <option name="published" value="1">Published</option>
+                <option name="draft" value="2">Draft</option>
+                <option name="deleted" value="3">Deleted</option>
+            </select>
+            <select class="dropdown-two">
+                <option>All details</option>
+
+            </select>
+            <button class="bulk-button">Bulk Select</button>
+            <button class="Cancel-button">Cancel</button>
+            <button class="bulk-button moveDraft">Move Draft </button>
+            <button class="Delete-button">Delete Permanently</button>
+        </div>
+
+
+        <div class="collectionWrapper collectionWrapperFlex">
+            <!--Product List-->
+            <div class="productList">
+
+            </div>
+
+            <!--Create collection sidebar-->
+            <div class="createCollectionBlock">
+                <div class="row publish_collection_block" bis_skin_checked="1">
+                    <div class="row publish_collection_wrapper" bis_skin_checked="1">
+
+                        <div class="row publish_collection_item" bis_skin_checked="1">
+                            <div class="publish_col_heading" bis_skin_checked="1">
+                                <span>Please Add Products From List</span>
+                            </div>
+                            <div class="empty_collection_layout_block" bis_skin_checked="1">
+                                <div class="first_empty_collection_block collection_block" bis_skin_checked="1">
+                                    <div class="collection_box_block" bis_skin_checked="1">
+                                        <div class="collection_wrapper_first" bis_skin_checked="1">
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                        <i>Main product goes here...</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="collection_wrapper_second" bis_skin_checked="1">
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collection_prod_button_block" bis_skin_checked="1">
+                                        <div class="collection_prod_button_wrapper" bis_skin_checked="1">
+                                            <div class="collection_prod_text" bis_skin_checked="1">
+                                                Collection Price
+                                            </div>
+                                            <div class="collection_prod_price" bis_skin_checked="1">
+                                                <div class="activeprice" bis_skin_checked="1">0.00</div>
+                                                <div class="regularprice" bis_skin_checked="1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection_name" bis_skin_checked="1">
+                                    <p>Name</p>
+                                    <input type="text" class="input_collection_name" name="name"
+                                        placeholder="eg: Avon longwear Lipstick &amp; Makeup Set">
+                                </div>
+                                <div class="plecement_promo_block" bis_skin_checked="1">
+                                    <div class="collection_placement" bis_skin_checked="1">
+                                        <p>Placement</p>
+                                        <input type="text" class="input_collection_placement" name="placement"
+                                            placeholder="eg: 1">
+                                    </div>
+                                    <div class="collection_promotion_message" bis_skin_checked="1">
+                                        <p>Promotion message</p>
+                                        <input type="text" class="input_collection_promo" name="promotion"
+                                            placeholder="eg: Save 10% on collection">
+                                    </div>
+                                </div>
+                                <div class="note_block" bis_skin_checked="1">
+                                    <span class="note_text">Note: Collection will be displayed on the main product
+                                        category page</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row publish_collection_button_block" bis_skin_checked="1">
+                            <div class="row publish_collection_save_draft_btn" bis_skin_checked="1">
+                                <span>SAVE &amp; DRAFT</span>
+                            </div>
+                            <div class="row publish_collection_btn" bis_skin_checked="1">
+                                <span>PUBLISH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal popup-->
+    <div class="modal ">
+        <div class="modal-content">
+            <div class="modal-msg">
+                Please publish an item or a delete product to replace selected product
+            </div>
+            <div class="modal-btn incButtonPrimary">Ok</div>
+        </div>
+    </div>
+
+    <script src="plugins/common.js"></script>
+    <script src="plugins/createCollection.js"></script>
+</body>
+
+</html>

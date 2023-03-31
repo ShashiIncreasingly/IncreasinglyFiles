@@ -1,0 +1,64 @@
+header{
+    background: #FFFFFF;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9;
+    position: sticky;
+    top: 0;
+    transition: 0.2s;
+
+    .incToggle{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        span{
+            width: 25px;
+            height: 2px;
+            background: #5A5A5A;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            transition: 0.2s;
+            &:nth-child(2){
+                width: 80%;
+            }
+            &:last-child{
+                margin-bottom: 0px;
+                width: 60%;
+            }
+        }
+        &:hover{
+            span{
+                &:nth-child(2){
+                    width: 100%;
+                }
+                &:last-child{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .incHeaderLinks{
+        ul{
+            display: flex;
+            li{
+                padding: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                color: #5A5A5A;
+                span{
+                    margin: 0px 5px;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+
+        }
+    }
+}

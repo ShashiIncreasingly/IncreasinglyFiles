@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increasingly Dashboard</title>
+    <link rel="shortcut icon" href="./Images/logo.svg">
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="./data.js"></script>
+</head>
+
+<body class="overflowHidden">
+
+
+    <!--Sidemenu-->
+    <aside class="sideMenu sidebarActive">
+        <div class="incLogo">
+            <img src="./Images/logo.svg" alt="">
+        </div>
+        <ul class="sideMenuLinks">
+            <li class="links-item"><img src="./Images/home.svg"> <span>Dashboard</span></li>
+            <li class="links-item"><img src="./Images/report.svg"> <span>Reporting</span></li>
+            <li class="links-item"><img src="./Images/collection.svg"> <span>Collection</span></li>
+            <li class="links-item"> <img src="./Images/bundle.svg"> <span>Bundle Operation</span></li>
+        </ul>
+    </aside>
+
+    <div class="mainWrapper sidebarActive">
+        <!--Header-->
+        <header>
+            <div class="incToggle" id="incToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="incHeaderLinks">
+                <ul>
+                    <li class="incNotification"><img src="./Images/notification.svg" alt=""></li>
+                    <li class="incProfile"><img src="./Images/person.svg"> <span> Hi Admin</span></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <div class="collectionHeader">
+            <h2>Create new collecton</h2>
+            <div class="buttonGroup">
+                <input type="text" class="incInputPrimary" placeholder="Search : Title , Category,SKU">
+                <button type="submit" class=""> <img src="./Images/search.svg"></button>
+            </div>
+            <div class="headerActions">
+                <button class="incButtonSecondary">View All</button>
+                <button class="incButtonPrimary"><img src="./Images/plus.svg"><span>Create new</span></button>
+            </div>
+        </div>
+
+
+        <div class="collectionWrapper collectionWrapperFlex">
+            <div class="productList">
+                <div class="productBlock">
+                    <div class="productImage">
+                        <img src="./Images/Product/20989_ultra_volume_lash_mascara2_400x 4.png" alt="">
+                    </div>
+                    <div class="productConent">
+                        <div class="productName">
+                            Avon True Ultra Volume Lash Magnify Mascara
+                        </div>
+                        <div class="productID">
+                            <span>Product ID :</span> 346783
+                        </div>
+                        <div class="productPrice">
+                            £5.50
+                        </div>
+                        <div class="productButton">
+                            <button class="incButtonProduct">Add to collection</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="createCollectionBlock">
+                <div class="row publish_collection_block" bis_skin_checked="1">
+                    <div class="row publish_collection_wrapper" bis_skin_checked="1">
+                        <div class="publish_col_heading" bis_skin_checked="1">
+                            <span>Please Add Products From List</span>
+                        </div>
+                        <div class="row publish_collection_item" bis_skin_checked="1">
+                            <div class="empty_collection_layout_block" bis_skin_checked="1">
+                                <div class="first_empty_collection_block collection_block" bis_skin_checked="1">
+                                    <div class="collection_box_block" bis_skin_checked="1">
+                                        <div class="collection_wrapper_first" bis_skin_checked="1">
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="collection_wrapper_second" bis_skin_checked="1">
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="collection_wrapper" bis_skin_checked="1">
+                                                <div class="collection_box" bis_skin_checked="1">
+                                                    <div class="collection_prod_container empty" bis_skin_checked="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collection_prod_button_block" bis_skin_checked="1">
+                                        <div class="collection_prod_button_wrapper" bis_skin_checked="1">
+                                            <div class="collection_prod_text" bis_skin_checked="1">
+                                                Collection Price
+                                            </div>
+                                            <div class="collection_prod_price" bis_skin_checked="1">
+                                                <div class="activeprice" bis_skin_checked="1">0.00</div>
+                                                <div class="regularprice" bis_skin_checked="1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection_name" bis_skin_checked="1">
+                                    <p>Name</p>
+                                    <input type="text" class="input_collection_name" name="name"
+                                        placeholder="eg: Avon longwear Lipstick &amp; Makeup Set">
+                                </div>
+                                <div class="plecement_promo_block" bis_skin_checked="1">
+                                    <div class="collection_placement" bis_skin_checked="1">
+                                        <p>Placement</p>
+                                        <input type="text" class="input_collection_placement" name="placement"
+                                            placeholder="eg: 1">
+                                    </div>
+                                    <div class="collection_promotion_message" bis_skin_checked="1">
+                                        <p>Promotion message</p>
+                                        <input type="text" class="input_collection_promo" name="promotion"
+                                            placeholder="eg: Save 10% on collection">
+                                    </div>
+                                </div>
+                                <div class="note_block" bis_skin_checked="1">
+                                    <span class="note_text">Note: Collection will be displayed on the main product
+                                        category page</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row publish_collection_button_block" bis_skin_checked="1">
+                            <div class="row publish_collection_save_draft_btn" bis_skin_checked="1">
+                                <span>SAVE &amp; DRAFT</span>
+                            </div>
+                            <div class="row publish_collection_btn" bis_skin_checked="1">
+                                <span>PUBLISH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var toggleBtn = document.getElementById('incToggle')
+        var mainWrapper = document.getElementsByClassName('mainWrapper')[0];
+        var sideBarMenu = document.getElementsByClassName('sideMenu')[0];
+
+        toggleBtn.addEventListener('click', function (e) {
+            mainWrapper.classList.toggle('sidebarActive')
+            sideBarMenu.classList.toggle('sidebarActive')
+        })
+
+
+        console.log(data.products)
+
+        var ProductList = document.getElementsByClassName('productList')[0];
+
+        console.log(ProductList);
+
+        let productItem;
+
+
+        data.products.map((product) => {
+            productItem = `<div class="productBlock">
+                    <div class="productImage">
+                        <img src="${product.images[0]}" alt="">
+                    </div>
+                    <div class="productConent">
+                        <div class="productName">
+                           ${product.title}
+                        </div>
+                        <div class="productID">
+                            <span>Product ID :</span> ${product.id}
+                        </div>
+                        <div class="productPrice">
+                            ${product.price}
+                        </div>
+                        <div class="productButton">
+                            <button class="incButtonProduct">Add to collection</button>
+                        </div>
+                    </div>
+                </div>`;
+
+
+            ProductList.insertAdjacentHTML("beforeend", productItem);
+
+        });
+    </script>
+</body>
+
+</html>

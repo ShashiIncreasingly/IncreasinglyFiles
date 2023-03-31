@@ -1,0 +1,112 @@
+
+
+
+
+
+//*--------------------------Bundle Block PDP--------------------------*//
+
+%inc_bundle_block {  
+  max-width: 1300px;
+  @include positioning(relative, null, null, null, null);
+  @include margin(0, auto, 30px, auto);
+  @extend %inc_row_center;
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-flow(column);
+    @include align-items(flex-start);
+    @include margin(0, auto, 0, auto);
+  }
+}
+
+
+// Main Product Block
+%inc_product_wrap_main {
+  @include height_width(auto, auto); 
+
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+
+    &:before{
+      @include display(none); 
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+//*--------------------------Bundle Products Slider--------------------------*//
+
+// Outer Most
+%inc_product_wrap_bundle {
+  @include height_width(auto, 730px);
+  @include positioning(relative, null, null, null, null);
+
+  
+  //Ipad Landscape
+  @include media_query("1337", "max") {
+    @include height_width(auto, 567px);
+  }
+  @media all and ( max-width: 1337px)   and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: 255px;
+  }
+
+  //Ipad portrait
+  @include media_query("1140", "max") {
+    @include height_width(auto, 262px);
+  }
+  //Mobile 
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    &:before{
+      @include display(none);
+     } 
+  }
+}
+
+
+
+//Slider Cover
+%inc_bundle_product_slider_cover {
+  max-width: 501px;
+  @include overflow(hidden); 
+  @include margin(0, auto, 0, auto);
+
+
+
+  //Ipad portrait 
+  @include media_query("1140", "max") {
+    @include height_width(auto, 250px);
+  }
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    max-width: 100%;
+
+  }
+}
+
+
+//slider_wrap
+%inc_bundle_products_slider_wrap {
+  @extend %inc_row; 
+
+  //Ipad
+  @include media_query("1337", "max") {
+    @include overflow(auto);
+  }
+
+  //Mobile
+  @include media_query("1337", "max") {
+    @include overflow(visible);
+  }
+}
+
+

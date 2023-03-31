@@ -1,0 +1,102 @@
+//Mixins
+@import '_mixins';
+//EXTENDs
+@import '_extends';
+//Product card style
+@import '_product';
+//Modal page  
+@import '_modal';
+//PDP style
+@import '_pdp';
+//Sidebar style 
+@import '_sidebar';
+//Cartpage 
+@import '_cart';
+.inc_overlay{
+    overflow: hidden;
+    #DW-SFToolkit{
+        display: none !important;
+    } 
+}
+.inc_bundles{
+    .ceiling{
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+.inc_overlay {
+    .local-progress-self:after, .local-progress-self:before, .local-progress:after, .local-progress:before {
+        content: "";
+        z-index: 999999999  !important;
+    }
+    .local-progress-self:before, .local-progress:before {
+        opacity: .9 !important;
+    }
+}
+.inc_local-progress-self:before, .inc_local-progress:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: .9;
+}
+.inc_local-progress::after, .inc_local-progress-self::after {
+    background: url(https://www.increasingly.co/Implementation/l0vHNy/images/LH-heart-outline.svg) no-repeat;
+}
+.inc_local-progress-self:after, .inc_local-progress-self:before, .inc_local-progress:after, .inc_local-progress:before {
+    content: "";
+    position: fixed;
+    z-index: 999999999;
+    animation: show-loader .3s ease-in;
+}
+.inc_local-progress-self:after, .inc_local-progress:after {
+    top: calc(50% - 28px);
+    left: calc(50% - 28px);
+    width: 56px;
+    height: 56px;   
+    background-size: 100% 100%;
+    opacity: 1;
+}
+.inc_product_description_main_block .accordion-icon{
+    display:none;
+    }
+    .inc_pdp_block,
+    .inc_sidebar_modal_block,
+    .inc_af_block{
+                    /*** iPhone and iOS Form Input Zoom Fixes ***/
+            /* Fix Input Zoom on devices older than iPhone 5: */
+            @media screen and (device-aspect-ratio: 2/3) {
+                select, textarea, input[type="text"], input[type="password"],
+                input[type="datetime"], input[type="datetime-local"],
+                input[type="date"], input[type="month"], input[type="time"],
+                input[type="week"], input[type="number"], input[type="email"],
+                input[type="url"]{ font-size: 16px; }
+            }
+            /* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+            @media screen and (device-aspect-ratio: 40/71) {
+                select, textarea, input[type="text"], input[type="password"],
+                input[type="datetime"], input[type="datetime-local"],
+                input[type="date"], input[type="month"], input[type="time"],
+                input[type="week"], input[type="number"], input[type="email"],
+                input[type="url"]{ font-size: 16px; }
+            }
+            /* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+            @media screen and (device-aspect-ratio: 375/667) {
+                select, textarea, input[type="text"], input[type="password"],
+                input[type="datetime"], input[type="datetime-local"],
+                input[type="date"], input[type="month"], input[type="time"],
+                input[type="week"], input[type="number"], input[type="email"], 
+                input[type="tel"], input[type="url"]{ font-size: 16px; }
+            }
+            /* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+            @media screen and (device-aspect-ratio: 9/16) {
+                select, textarea, input[type="text"], input[type="password"],
+                input[type="datetime"], input[type="datetime-local"],
+                input[type="date"], input[type="month"], input[type="time"],
+                input[type="week"], input[type="number"], input[type="email"],
+                input[type="tel"], input[type="url"]{ font-size: 16px; }
+            }
+    }
+
+

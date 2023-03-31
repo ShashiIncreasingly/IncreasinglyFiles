@@ -1,0 +1,641 @@
+
+//*--------------------------Canvas--------------------------*//
+
+%inc_canvas {
+  background: $white;
+  @include padding(15px, 15px, 15px, 15px);
+  
+  @include media_query("820", "max") {
+    @include padding(15px, 0, 15px, 0);
+    background: $white;
+  }  
+}    
+
+//*--------------------------Headings--------------------------*//
+
+// Large
+%inc_heading_lg,
+%inc_heading_md,
+%inc_heading_sm {
+  @include rhythm(22, 32);  
+  color: $text_color_1;
+  @include text-align(center);
+  @include font-weight(400);
+  @include margin(null, null, 10px, null);
+  @include media_query("820", "max") {
+    @include rhythm(16, 22);
+  }
+}
+
+// Medium
+%inc_heading_md {
+  @include rhythm(20, 24);
+  @include media_query("820", "max") {
+    @include rhythm(18, 22);
+  }
+}
+
+
+// Small
+%inc_heading_sm {
+  @include rhythm(14, 20);
+}
+
+// XS Small // Size Color Titles
+%inc_heading_xm {
+  @include rhythm(12, 20);
+  @include margin(null, 10px, null, null);
+  @include text-transform(capitalize);
+  color: $black;
+  @include font-weight(400);
+  font-family: $font_family;
+}
+
+
+//*--------------------------Content--------------------------*//
+
+%inc_content_standard {
+  @include rhythm(16, 22);
+  color: $text_color_1;
+}
+
+%inc_content_sm {
+  @include rhythm(12, 20);
+  color: $text_color_1;
+}
+
+//*--------------------------Flex--------------------------*//
+
+
+//Flexbox Row
+%inc_row,
+%inc_column,
+%inc_row_center {
+  @include flexbox();
+}
+
+
+//Flex Column
+%inc_column {
+  @include flex-flow(column);
+}
+
+
+//Flex Row
+%inc_row_center {
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+
+
+
+//*--------------------------Product thumbnails list Mobile--------------------------*//
+//Product List Thumbnails Wrap
+%inc_product_list_thumbnail_wrap {
+  @extend %inc_row;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  @include height_width(0, auto);
+  transition-duration: 0.2s;
+}
+%inc_product_list_thumbnail_wrap_active{
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  @include height_width(100px, auto);
+  transition-duration: 0.2s;
+  @include media_query("820","max"){
+      background: #E6E6E6;
+  }
+}
+
+//Product List Thumbnails Item
+%inc_product_list_thumbnail_item {
+  @include height_width(90px, auto);
+  @include flex-basis(25%);
+  @include border-default();
+  @include padding(10px, 10px, 10px, 10px);
+  @include margin(5px, 3px, 5px, 3px);
+  @include positioning(relative, null, null, null, null);
+  background: $white;
+  @include cursor(pointer);
+  box-sizing: border-box;
+}
+
+
+//Product List Thumbnails Item Active
+%inc_product_list_thumbnail_item_active {
+  border: 2px solid $secondary_color;
+  @include box-shadow(1px, 1px, 4px, rgba(0, 0, 0, 0.1), false);
+
+  
+}
+
+
+//Product List Thumbnails Item Active
+%inc_product_list_thumbnail_item_added{
+  border: 2px solid $secondary_color;
+  &:before{
+      @include positioning(absolute, 0, 0, 0, 0); 
+      content: '';
+      @include height_width(100%, 100%);
+      background: #000000;
+      opacity:  0.35;
+      z-index: 1;
+    }
+}
+
+%inc_product_list_thumbnail_item_added_img{
+  &:before{
+    @include positioning(absolute, auto, 0, 10px, 0); 
+    @include margin(auto,auto,auto,auto); 
+    max-width: 80%;
+    content: 'Added';
+    color:$white; 
+    @include height_width(22px, auto);
+    line-height: 18px; 
+    @include text-align(center);   
+    background: transparent ;
+    font-family: $font_family;
+    z-index: 1;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &:after{
+    content: '';
+    @include positioning(absolute, 0, 0, 0, 0); 
+    @include margin(auto,auto,auto,auto); 
+    @include height_width(20px, 20px);
+    background: url(../images/inc_sprite.svg) -104px -6px/470px no-repeat;
+    z-index: 1;
+  }
+}
+
+
+
+//Product List Thumbnails Item value
+%inc_product_list_thumbnail_value {
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  max-width: 50px;
+  object-fit: contain;
+}
+
+
+
+
+
+//*--------------------------Selection Modal Global--------------------------*//
+//Modal Wrap
+
+//overlay
+%inc_selection_modal_overlay {
+  @include positioning(fixed, 0, 0, 0, 0);
+  z-index: 9999999999;
+  background: rgba(0, 0, 0, 0.7);
+  @include transition-duration(0.4s);
+  transform: translateY(-150%);
+  @include media_query("820", "max") {
+    transform: none;
+    @include positioning(fixed, 0, auto, 0, -200%);
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // transition-duration:0s !important;
+  }
+}
+
+// Overlay Active{
+%inc_selection_modal_overlay_active {
+  transform: translateY(0%);
+
+  @include media_query("820", "max") {
+    transform: none;
+    @include positioning(fixed, 0, auto, 0, 0);
+
+  }
+}
+
+
+//Modal Standard
+%inc_modal_standard {
+  
+  @include positioning(fixed, 50%, auto, auto,50%);
+  @include margin(auto, auto, auto, auto);
+  height: auto;
+  @include height_width(fit-content, 900px);
+  background: $white;
+  z-index: 99999999999;
+  @include transition-duration(0.4s);
+  @include overflow(hidden);
+  transform: translate(-50%,-50%);
+  min-height: 500px;
+  max-height: 600px;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    transform: scale(1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 530px;
+    position: absolute;
+  }
+  @include media_query("820", "max") {
+    @include height_width(100%, 100%);
+    transform: none;
+    @include scrollbars(3px,3px,5px,#dddddd);
+    @include positioning(fixed, 0, auto, -250%, 0);
+    @include overflow(auto);
+    background: $white;
+    border-radius: 0px;
+    min-height: 100%;
+    max-height: 100%;
+  }
+}
+
+
+// Modal Active 
+%inc_modal_standard_active { 
+  @include transition-duration(0.4s);
+  transform: translate(-50%,-50%);
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    transform: scale(1);
+  }
+  @include media_query("820", "max") {
+    transform: none;
+    @include positioning(fixed, 0, auto, 0, 0);
+  }
+}
+
+
+//Scroll Bars
+.inc_pdp_bundle_cart_added_block::-webkit-scrollbar {
+  width: 2px;
+  @include radius(50px,50px,50px,50px);
+  @include media_query("820","max"){
+    width: auto;
+    @include radius(auto,auto,auto,auto);
+  }
+}  
+ 
+.inc_pdp_bundle_cart_added_block::-webkit-scrollbar-track {
+  background-color: #eee;
+  @include media_query("820","max"){
+    background-color: auto;
+    }
+} 
+ 
+.inc_pdp_bundle_cart_added_block::-webkit-scrollbar-thumb {
+    @include media_query("820","max"){
+        background-color: auto;
+    }
+     background-color: #ccc;
+ 
+}
+
+//overlay 
+.inc_overlay,.inc_mobile_overlay{
+  @include overflow(hidden);
+  touch-action: none !important;
+  @include media_query("1025","max"){
+   position: fixed;
+  }
+}
+
+
+ 
+
+ 
+//Ratings
+// .inc_product_desc_ratings_block { 
+//   @include height_width(null, null);
+
+//   //@include font(right, #fff, 22, 22, 400);
+//   text-align: right;
+//   color: #ffb835;
+//   @include padding(0, 0, 0, 0);
+//   @include margin(0, 0, 0, 0);
+//   position: relative;
+//   display: flex;
+//   flex-flow: row-reverse;
+//   justify-content: flex-end;
+//   margin-bottom: 5px;
+//   font-size: 17px;
+//   min-height: 24px;
+//   line-height: 22px;
+//   max-width: 117px;
+   
+//   &:after,
+//   &:before {
+//       content: "";
+//       display: table;
+//   }
+
+//   span {
+//       //float: right; 
+//   }
+
+//   .rating_count {
+//       color: #000000;
+//       @include padding(3px, 0, 0, 3px);
+//       font-size: 12px;
+
+//       @include media_query("769") {
+//           font-size: 14px;
+//           line-height: 18px;
+//       }
+//   }
+
+//   .rating_avg {
+//       color: #706e6b;
+//       line-height: normal;
+//       font-size: 14px;
+
+//       @include media_query("769") {
+//           font-size: 15px;
+//           line-height: 22px;
+//       }
+//   } 
+
+//   .rating_stars {
+//       //color: #e3328b;
+//       letter-spacing: -2px;
+//   }
+
+//   &>span {
+//       &:last-of-type {
+//           position: relative;
+//           margin-right: 4px;
+
+//           @include media_query("769") {
+//               margin-right: 2px;
+//           }
+
+//           &:before {
+//               @include height_width(20px, 0);
+//               @include positioning(absolute, 0, null, null, 0);
+//               color: #ffb835;
+//               display: block;
+//               content: '\2605\2605\2605\2605\2605';
+//               overflow: hidden;
+//               height: 100%;
+              
+//           }
+//       }
+//   }
+
+//   &.rating_0-0,
+//   >span:last-of-type::before {
+//       @include height_width(null, 0%);
+//   }
+
+//   &.rating_0-1>span:last-of-type::before {
+//       @include height_width(null, 2%);
+//   }
+
+//   &.rating_0-2>span:last-of-type::before {
+//       @include height_width(null, 4%);
+//   }
+
+//   &.rating_0-3>span:last-of-type::before {
+//       @include height_width(null, 6%);
+//   }
+
+//   &.rating_0-4>span:last-of-type::before {
+//       @include height_width(null, 8%);
+//   }
+
+//   &.rating_0-5>span:last-of-type::before {
+//       @include height_width(null, 10%);
+//   }
+
+//   &.rating_0-6>span:last-of-type::before {
+//       @include height_width(null, 12%);
+//   }
+
+//   &.rating_0-7>span:last-of-type::before {
+//       @include height_width(null, 14%);
+//   }
+
+//   &.rating_0-8>span:last-of-type::before {
+//       @include height_width(null, 16%);
+//   }
+
+//   &.rating_0-9>span:last-of-type::before {
+//       @include height_width(null, 18%);
+//   }
+
+//   &.rating_1-0>span:last-of-type::before,
+//   &.rating_6-0>span:last-of-type::before {
+//       @include height_width(null, 20%);
+//   }
+
+//   &.rating_1-1>span:last-of-type::before,
+//   &.rating_6-1>span:last-of-type::before {
+//       @include height_width(null, 22%);
+//   }
+
+//   &.rating_1-2>span:last-of-type::before,
+//   &.rating_6-2>span:last-of-type::before {
+//       @include height_width(null, 24%);
+//   }
+
+//   &.rating_1-3>span:last-of-type::before,
+//   &.rating_6-3>span:last-of-type::before {
+//       @include height_width(null, 26%);
+//   }
+
+//   &.rating_1-4>span:last-of-type::before,
+//   &.rating_6-4>span:last-of-type::before {
+//       @include height_width(null, 28%);
+//   }
+
+//   &.rating_1-5>span:last-of-type::before,
+//   &.rating_6-5>span:last-of-type::before {
+//       @include height_width(null, 30%);
+//   }
+
+//   &.rating_1-6>span:last-of-type::before,
+//   &.rating_6-6>span:last-of-type::before {
+//       @include height_width(null, 32%);
+//   }
+
+//   &.rating_1-7>span:last-of-type::before,
+//   &.rating_6-7>span:last-of-type::before {
+//       @include height_width(null, 34%);
+//   }
+
+//   &.rating_1-8>span:last-of-type::before,
+//   &.rating_6-8>span:last-of-type::before {
+//       @include height_width(null, 36%);
+//   }
+
+//   &.rating_1-9>span:last-of-type::before,
+//   &.rating_6-8>span:last-of-type::before {
+//       @include height_width(null, 38%);
+//   }
+
+//   &.rating_2-0>span:last-of-type::before,
+//   &.rating_7-0>span:last-of-type::before {
+//       @include height_width(null, 40%);
+//   }
+
+//   &.rating_2-1>span:last-of-type::before,
+//   &.rating_7-1>span:last-of-type::before {
+//       @include height_width(null, 42%);
+//   }
+
+//   &.rating_2-2>span:last-of-type::before,
+//   &.rating_7-2>span:last-of-type::before {
+//       @include height_width(null, 44%);
+//   }
+
+//   &.rating_2-3>span:last-of-type::before,
+//   &.rating_7-3>span:last-of-type::before {
+//       @include height_width(null, 46%);
+//   }
+
+//   &.rating_2-4>span:last-of-type::before,
+//   &.rating_7-4>span:last-of-type::before {
+//       @include height_width(null, 48%);
+//   }
+
+//   &.rating_2-5>span:last-of-type::before,
+//   &.rating_7-5>span:last-of-type::before {
+//       @include height_width(null, 50%);
+//   }
+
+//   &.rating_2-6>span:last-of-type::before,
+//   &.rating_7-6>span:last-of-type::before {
+//       @include height_width(null, 52%);
+//   }
+
+//   &.rating_2-7>span:last-of-type::before,
+//   &.rating_7-7>span:last-of-type::before {
+//       @include height_width(null, 54%);
+//   }
+
+//   &.rating_2-8>span:last-of-type::before,
+//   &.rating_7-8>span:last-of-type::before {
+//       @include height_width(null, 56%);
+//   }
+
+//   &.rating_2-9>span:last-of-type::before,
+//   &.rating_7-9>span:last-of-type::before {
+//       @include height_width(null, 58%);
+//   }
+
+//   &.rating_3-0>span:last-of-type::before,
+//   &.rating_8-0>span:last-of-type::before {
+//       @include height_width(null, 60%);
+//   }
+
+//   &.rating_3-1>span:last-of-type::before,
+//   &.rating_8-1>span:last-of-type::before {
+//       @include height_width(null, 62%);
+//   }
+
+//   &.rating_3-2>span:last-of-type::before,
+//   &.rating_8-2>span:last-of-type::before {
+//       @include height_width(null, 64%);
+//   }
+
+//   &.rating_3-3>span:last-of-type::before,
+//   &.rating_8-3>span:last-of-type::before {
+//       @include height_width(null, 66%);
+//   }
+
+//   &.rating_3-4>span:last-of-type::before,
+//   &.rating_8-4>span:last-of-type::before {
+//       @include height_width(null, 68%);
+//   }
+
+//   &.rating_3-5>span:last-of-type::before,
+//   &.rating_8-5>span:last-of-type::before {
+//       @include height_width(null, 70%);
+//   }
+
+//   &.rating_3-6>span:last-of-type::before,
+//   &.rating_8-6>span:last-of-type::before {
+//       @include height_width(null, 72%);
+//   }
+
+//   &.rating_3-7>span:last-of-type::before,
+//   &.rating_8-7>span:last-of-type::before {
+//       @include height_width(null, 74%);
+//   }
+
+//   &.rating_3-8>span:last-of-type::before,
+//   &.rating_8-8>span:last-of-type::before {
+//       @include height_width(null, 76%);
+//   }
+
+//   &.rating_3-9>span:last-of-type::before,
+//   &.rating_8-9>span:last-of-type::before {
+//       @include height_width(null, 78%);
+//   }
+
+//   &.rating_4-0>span:last-of-type::before,
+//   &.rating_9-0>span:last-of-type::before {
+//       @include height_width(null, 80%);
+//   }
+
+//   &.rating_4-1>span:last-of-type::before,
+//   &.rating_9-1>span:last-of-type::before {
+//       @include height_width(null, 82%);
+//   }
+
+//   &.rating_4-2>span:last-of-type::before,
+//   &.rating_9-2>span:last-of-type::before {
+//       @include height_width(null, 84%);
+//   }
+
+//   &.rating_4-3>span:last-of-type::before,
+//   &.rating_9-3>span:last-of-type::before {
+//       @include height_width(null, 86%);
+//   }
+
+//   &.rating_4-4>span:last-of-type::before,
+//   &.rating_9-4>span:last-of-type::before {
+//       @include height_width(null, 88%);
+//   }
+
+//   &.rating_4-5>span:last-of-type::before,
+//   &.rating_9-5>span:last-of-type::before {
+//       @include height_width(null, 90%);
+//   }
+
+//   &.rating_4-6>span:last-of-type::before,
+//   &.rating_9-6>span:last-of-type::before {
+//       @include height_width(null, 92%);
+//   }
+
+//   &.rating_4-7>span:last-of-type::before,
+//   &.rating_9-7>span:last-of-type::before {
+//       @include height_width(null, 94%);
+//   }
+
+//   &.rating_4-8>span:last-of-type::before,
+//   &.rating_9-8>span:last-of-type::before {
+//       @include height_width(null, 96%);
+//   }
+
+//   &.rating_4-9>span:last-of-type::before,
+//   &.rating_9-9>span:last-of-type::before {
+//       @include height_width(null, 98%);
+//   }
+
+//   &.rating_5-0>span:last-of-type::before {
+//       @include height_width(null, 100%);
+//   }
+
+//   &.rating_10-0>span:last-of-type::before {
+//       @include height_width(null, 100%);
+//   }
+// }
+ 
+
+
