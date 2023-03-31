@@ -1,0 +1,97 @@
+
+//*--------------------------Cart--------------------------*//
+
+//Outer Modal
+%inc_af_container_outer { 
+    max-width: 1140px; 
+    margin: 0 auto;
+    @include positioning(relative, null, null, null, null);
+    @include media_query("1140", "max") {
+      max-width: 100%;
+    }
+  }
+  
+  //Af List row
+  %inc_list_products_row_only {  
+    max-width: 92%;   
+    @extend %inc_bundle_block;
+    @include margin(0, auto, 0, auto);
+    @include overflow(hidden); 
+    @include justify-content(flex-start);
+    @include media_query("1140", "max") {
+      overflow: auto;
+    }   
+  
+    //Mobile
+    @include media_query("920", "max") {
+      @include flex-flow(row);
+      overflow-y: hidden;
+      overflow-x: auto;
+      @include margin(0, auto, 0, auto);
+    }    
+  }
+  //Af Product Card
+  %inc_af_product_card { 
+    @extend %inc_product_card;  
+    max-width: 155px;
+    min-width: 155px;  
+    padding: 5px;
+    margin-right: 10px;
+    @include media_query("820", "max") {
+      max-width: 155px;
+      min-width: 155px;  
+      @include margin(null, 5px, null, 5px);
+      @include flex-flow(column);
+    }
+  }
+  //Product Featured Image
+  %inc_af_product_card_image_wrap {
+    @extend %inc_product_image_wrap;
+    @include padding(0, 10px, 0, 0px);
+    @include margin(0, 0, 0, 0);
+    @include media_query("820", "max") {
+      @include padding(0, 10px, 0, 0px);
+      flex-basis:35%; 
+    }
+  }
+  //Product Featured Des
+  %inc_af_product_card_des_wrap {
+    @extend %inc_product_des_wrap;
+    @include media_query("820", "max") {
+      @include padding(null, 5px, null, 0px);
+      flex-basis:65%;
+    }
+  }
+  .inc_af_block .modal_btn {
+      display: none !important;
+  }
+
+  .inc_af_block .modal_btn:first-child {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 0;
+      float: unset !important;
+      bottom: auto;
+  }
+
+.inc_af_block{
+  .inc_af_left_btn_img_block{
+    .inc_af_left_btn_img{
+      background : url(../images/inc_sprite_work.svg) -122px -6px/380px no-repeat;
+      transform: rotate(180deg) !important ;
+      @include media_query("1140", "max") {
+        display: none;
+      } 
+    }
+  }
+  .inc_af_right_btn_img_block{
+    .inc_af_right_btn_img{
+      background: url(../images/inc_sprite_work.svg) -122px -6px/380px no-repeat;
+      @include media_query("1140", "max") {
+        display: none;
+      }
+    }
+  }
+}

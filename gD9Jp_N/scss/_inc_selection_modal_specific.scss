@@ -1,0 +1,567 @@
+
+//*--------------------------Selection Modal Global--------------------------*//
+
+//Selection Modal Product Card in two columns
+%inc_product_card_two_cols {
+  @extend %inc_row;
+  @include flex-flow(wrap);
+  max-width: 100%;
+  @include padding(0, 0, 0, 0); 
+  border: 10px solid #DDDDDD;
+  border-radius: 10px;
+  background: #fff;
+  min-width: 600px;
+
+}
+%config_title{
+  font-family: $font_family_2;
+  color: $black;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.32;
+}
+
+%config_item_block{
+  border: 1px solid #e2e1dd;
+  background-color: #f8f7f5;
+  display: block;
+  line-height: 2;
+  min-height: 40px;
+  min-height: 2rem;
+  min-width: 40px;
+  min-width: 2.5rem;
+  margin: 0 8px 8px 0;
+  margin: 0 .5rem .5rem 0;
+  padding: 0 12px;
+  padding: 0 .75rem;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0 5px;
+  cursor: pointer;
+    &:first-child{
+      margin-left: 0px;
+    }
+    &:last-child{
+      margin-right: 0px;
+    }
+    &.active{
+      background-color: #00b300;
+      border: 1px solid #00b300;
+      color: #fff;
+    }
+    &:hover{
+      color: #0072ce ;
+      @include media_query("820","max"){
+        color: #ffffff;
+      }
+    }
+}
+
+//Selection Modal Header
+%inc_selection_modal_header {
+  
+  display: none; 
+
+  @extend %inc_row_center; 
+  @include flex-basis(auto);
+  @include positioning(relative, null, null, null, null);
+  @include height_width(47px, auto);
+  min-width: 120px;  
+  @include border-sizing(border-box);
+  @include margin(null, 10px, null, 10px);
+  @include media_query("820", "max") {
+    @include margin(0, null, 10px, null);
+    @include positioning(relative,0,0,auto,0);
+    background: $white;
+    z-index: 2;
+  }
+}
+
+
+//Selection Modal Header Title
+%inc_selection_modal_header_title {
+  @extend %inc_heading_md;
+  @include margin(auto, auto, auto, auto); 
+  text-transform: unset; 
+  // display: none;
+  font-family: $font_family;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3B2E1D; 
+
+}
+
+
+//Selection Modal Title
+
+//Selection Modal Image Wrapper
+%inc_product_card_two_cols_img {  
+  @include height_width(auto, 35%);
+  @include padding(0, 0, 35px, 35px); 
+  @include margin(0, 0, 18px, 0);
+  border: none;
+  @include flex-basis(33%);
+  @include border-sizing(border-box);
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @include flex-basis(35%);
+  }
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(100%);
+    @include margin(0, 0, 0, 0);
+    @include padding(30px, 20px, 10px, 30px);
+  }
+}
+
+
+//Selection Modal Description Wrapper
+
+//Selection Modal Description wrap
+%inc_product_card_two_cols_des { 
+  @include flex-basis(52%);    
+  @include margin(0, 0, 10px, 0);      
+  @include height_width(auto, 50%);   
+  @include padding(0, 0, 15px, 20px);   
+  @include border-sizing(border-box);
+  @include media_query("820", "max") {
+    @include flex-basis(100%);
+    @include padding(5px, 25px, 0, 25px);
+    margin: 0;
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @include padding(5px, 15px, 15px, 15px);
+    @include flex-basis(43%);
+  }
+}
+
+//Selection Modal image wrap
+%inc_product_card_two_cols_img_inner {  
+  @include height_width(125px, 100%);
+  max-width: 125px;  
+  @include margin(null, auto, 10px, auto);
+  border: none;  
+  display: flex;  
+  justify-content: flex-start;
+  //Mobile
+  @include media_query("820", "max") { 
+    @include height_width(100%, 100%);
+    @include margin(0, null, 0, null);
+    border: none; 
+    max-width: 200px;
+    border: 1px solid #dddd;
+    min-height: 200px;
+    min-width: 200px;
+    padding: 0;
+  }
+}
+
+//Selection Modal image wrap Item value
+%inc_product_card_two_cols_product_img {
+  //max-width: 100%; 
+  object-fit: contain;
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;  
+  cursor: pointer !IMPORTANT; 
+  //Mobile
+  @include media_query("820", "max") {
+    max-width: 100%;
+  }
+}
+
+
+//Selection Modal image gallery
+%inc_product_card_gallery_wrap {
+  @extend %inc_row_center;
+  @include flex-flow(wrap);
+  max-width: 292px; 
+  height: 76px; 
+  overflow: hidden; 
+  margin: 0 auto;
+  @include media_query("1590", "max") {
+    height: 66px;
+  }
+  
+
+  //Mobile XS
+  @include media_query("480", "max") {
+    @include justify-content(center); 
+    @include flex-flow(nowrap);
+    @include margin(null,auto,null,auto); 
+  }
+}
+
+
+//Selection Modal Image Items
+%inc_product_card_gallery_item {
+  @include height_width(60px, 60px); 
+  min-width: 60px;
+  border: 1px solid $border_color_3;
+  // background: $backface_color_1;
+  @include margin(5px, 5px, 5px, 5px);
+  @include positioning(relative, null, null, null, null);
+  //First Child
+  &:first-child {
+    @include margin(null, null, null, 0);
+  }
+  @include media_query("1590","max"){
+    @include height_width(50px, 50px);
+    min-width: 50px;
+  }
+  @include media_query("820","max"){
+    min-width: 50px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    margin-left: 1px;
+  }
+}
+
+
+//Selection Modal Image Items Value
+%inc_product_card_gallery_item_img {
+  @include height_width(92%, 92%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include cursor(pointer);
+  background: $white;
+  @include padding(2px,2px,2px,2px); 
+  object-fit: contain;
+  /* @include media_query("820","max"){
+    display: none;
+  } */
+}
+
+
+// Selection Modal Attributes
+%inc_product_attributes_modal {
+  border: none;  
+  background: none;
+  box-shadow: none; 
+  @include display(block);
+  @include height_width(auto, 100%);
+  @include margin(0px, null ,0px, null);
+  max-width: 100%; 
+  cursor: pointer;
+  @include media_query("820", "max"){
+    @include margin(10px, null ,0, null);
+  }
+  &:hover {
+    background: none;
+  }
+}
+
+
+
+//Selection Modal Colors Wrap { //No Property}
+%inc_color_list{
+  @extend %inc_row;
+  @include flex-wrap(wrap);
+  height: auto;
+  max-height: 200px;
+  background: $white;
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: calc(100% - 2px);
+  overflow-y: auto;
+  border: 1px solid #d0d0d0;
+  border-width: 0 1px 1px 1px;
+  border-radius: 4px;
+  z-index: 11;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: none;
+  
+  // &::before{
+  //   height: 1px;
+  //   background: #d0d0d0;
+  //   margin: 0 20px;
+  //   padding: 0px;
+  //   overflow: hidden;
+  //   content: '';
+  //   display: block;
+  // }
+   //Mobile
+   @include media_query("820", "max") {
+    // bottom: 38px;
+    // top: auto;
+    // border-width: 1px 1px 0px 1px;
+  }
+ 
+}
+ 
+//Selection Modal Colors/Size Items
+%inc_product_attributes_items_wrap {
+  height: 38px;
+  width: 100%;
+  @include cursor(pointer);
+  @include positioning(relative, null, null, null, null);
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+
+//Selection Modal Colors/Size Items Value
+%inc_product_attributes_items {
+  @include height_width(100%, 100%);
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include transition(0.2s);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+
+
+//Selection Modal Size Wrap { //No Property}
+
+
+//Selection Modal Size Items
+%inc_product_attributes_items_size_wrap {
+  @extend %inc_product_attributes_items_wrap;
+  @include height_width(25px, auto);
+  min-width: 25px;
+  max-width: 80px;
+  @extend %inc_row_center;
+  background: $white;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0 .25em;
+  line-height: 1.75em;
+}
+
+// Selection Modal QTY wrap
+%inc_product_qty_wrap {    
+  @include height_width(40px, 55px);
+  @include positioning(relative, null, null, null, null);
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include margin(null, 20px, null, null); 
+  border: none;
+  @include flex-basis(auto); 
+
+  display: none; 
+
+  //Mobile
+  @include media_query("820", "max") {
+    max-width: 180px;
+    @include margin(null, 10px, null, null); 
+    flex-basis: 13%;
+    height: 60px;
+  }
+}
+
+
+//Selection Modal QTY icon Global
+%inc_product_qty_icon {
+  @include height_width(100%, 100%); 
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include transition(0.2s);
+  @include cursor(pointer);
+
+  //hover
+  &:hover {
+   
+  }
+}
+ 
+
+// Selection Modal QTY Minus  wrap
+%inc_product_qty_minus_wrap {
+  @include height_width(38px, 40px);
+  background:  transparent;
+  @include positioning(relative, null, null, null, null);
+  border-right: 1px solid #dddddd;
+}
+
+
+// Selection Modal QTY Minus   icon
+%inc_product_qty_minus_icon {
+  @extend %inc_product_qty_icon;
+  background: url(../images/inc_sprite.svg) -189px -90px/280px no-repeat;
+
+  @include media_query("820","max"){
+  }
+}
+
+
+// Selection Modal QTY plus Wrap
+%inc_product_qty_plus_wrap {
+  @include height_width(38px, 40px); 
+  background:  transparent;
+  @include positioning(relative, null, null, null, null);
+}
+
+
+// Selection Modal QTY plus  icon
+%inc_product_qty_plus_icon {
+  background: url(../images/inc_sprite.svg) -166px -101px/310px no-repeat;
+  @extend %inc_product_qty_icon;
+  @include media_query("820","max"){ 
+  }
+}
+
+
+// Selection Modal QTY input Wrap
+%inc_product_qty_input_wrap {
+  @include height_width(26px, 100%);
+  @include positioning(relative, null, null, null, null);
+  border: 1px solid #707070;
+  border-radius: 2px;
+}
+
+
+// Selection Modal QTY input
+%inc_product_qty_input {
+  border: none;
+  @include height_width(100%, 60%); 
+  @include positioning(absolute, 0, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include padding(0, 5px, 0, 5px);
+  @include box-sizing(border-box);
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+  font-size: 16px;
+  @include text-align(center);
+  background:  transparent;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+    @include positioning(absolute, 2px, 0, 0, 0);
+  }
+}
+
+
+//Fixed Button Set Wrap
+%inc_fixed_button_set{ 
+  @extend %inc_row;
+  @include media_query("820", "max") {
+    @include positioning(fixed, auto, 0, 0, 0);
+    @include margin(auto,auto,auto,auto);
+    @include padding(10px,10px,10px,10px);
+    background: $white;
+    @include height_width(auto, 100%);
+    @include box-shadow(0, 0px, 13px, rgba(0, 0, 0, 0.2), false);
+    transition-duration: 0.6s;
+    box-sizing: border-box;
+    z-index: 15;
+  }
+}
+
+//Long Description
+
+
+%inc_modal_long_des{
+  @include positioning(absolute, auto, 50%, 0, auto);
+  max-width: 445px;
+  @include height_width(auto, 100%);
+  height: calc(100% - 47px);
+  background: $white;
+  border-right: 1px solid #dddddd;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  width: 0px;
+  transition:  0.4s cubic-bezier(0.16, 0.76, 1, 1);
+  @include media_query("920","max"){
+    max-width: 50%;
+  }
+  @include media_query("820","max"){
+      @include positioning(relative, auto, auto, auto, auto);
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+      width: auto;
+      max-width: none;
+      z-index: 1;
+      border-right: none;
+  }
+  %inc_modal_long_des_text{
+    @include overflow(auto);
+    @include positioning(absolute, 40px, auto, 0, 0);
+    @include padding(10px,20px,10px,20px); 
+    @include height_width(90%, 100%);
+    font-size: 15px;
+    line-height: 1.35;
+    opacity: 1;
+    font-family: $font_family;
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    a{
+      // font-size: 20px;;
+    }
+    h2{
+      line-height: normal;
+      img{
+        display: none;
+      }
+    }
+    @include media_query("820","max"){
+      @include positioning(relative, auto, auto, auto, auto);
+      height: 100%;
+      padding: 0px;
+    }
+    #contentCollapse-readmore{
+      display: none;
+    }
+  }
+  
+} 
+
+@keyframes description{
+  0%{
+   right: 50%;
+   width: 0px;
+   left: auto;
+  }
+ 
+  100%{
+    right: auto;
+    width: 100%;
+    left: 0;
+  }
+}
+   
+%inc_modal_long_des_active {
+  opacity: 1; 
+  z-index: 9999999999;
+  visibility: visible;
+  // height: calc(100% - 47px);
+  width: 100%;
+  @include media_query("820","max"){
+    @include positioning(relative, auto, null, 0, null);
+    max-width: 100%;
+    display: block;
+    opacity: 1;
+    display: none;
+    .inc_product_Info_Full_desc_info_block{
+      display: block
+    }
+  }
+
+
+}
+
+
+//Shade Description
+%inc_shade_des{ 
+
+    @include positioning(absolute, null, 0, 0, 0);
+    @include text-align(center);
+    background: $white;
+    @include height_width(auto, 100%);
+    @include margin(auto,auto,auto,auto); 
+    z-index: 9;
+  @include padding(10px,10px,10px,10px);  
+  
+
+}

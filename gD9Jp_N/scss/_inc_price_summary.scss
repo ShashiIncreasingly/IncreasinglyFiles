@@ -1,0 +1,183 @@
+
+//*--------------------------Price Summary--------------------------*//
+
+%inc_price_summary {
+  @include height_width(480px, 100%);
+  @extend %inc_product_card;
+  @include padding(0, 0, 0, 0); 
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include height_width(auto, 100%);
+    @include positioning(sticky, auto, 0, 0, 0); 
+    @include margin(auto, auto, auto, auto);
+    @include box-shadow(1px, 5px, 40px, rgba(0, 0, 0, 0.1), false);
+    background: $white;
+    @include radius(0, 0, 0, 0); 
+    z-index: 10000;
+    transition-duration: 0.6s ;
+    transform: translateY(0); 
+    @include overflow(hidden); 
+  }
+}
+
+
+//Active Price Summary
+%inc_price_summary_active {
+  //Mobile
+  @include media_query("820", "max") {
+    z-index: 10000000000;
+    transition-duration: 0.6s;
+    transform: translateY(0);
+    @include positioning(fixed, auto, 0, 0, 0);
+    transition-duration: 0.3s;
+  }
+}
+  
+
+//Price Summary Tile
+%inc_price_summary_tilte {
+  @extend %inc_heading_sm;
+  @include border("bottom", 1px, solid, $border_color_1);
+  @include padding(15px, 15px, 15px, 15px);
+  @include text-align(left);
+  @include font-weight(600); 
+  color: $black;
+  @include margin(null,null,0,null); 
+}
+
+
+
+//Price Summary Added Items  wrap
+%inc_added_product_scroll {
+  @include height_width(176px, 100%);
+  @include overflow(auto);
+
+ //Mobile
+  @include media_query("820", "max") {
+    @include height_width(0, 100%);
+   @include overflow(hidden);
+    transform: scaleY(0); 
+    transition-duration: 0.4s;
+    z-index: 999;
+  }
+}
+
+
+
+
+//Price Summary Added Items  wrap
+
+
+//Price Summary Added Items  Item
+%inc_added_product_item {
+  @include border("bottom", 1px, solid, $border_color_1);
+  @include padding(10px, 10px, 10px, 60px);
+  @extend %inc_row;
+  @include align-items(center); 
+  @include flex-flow(wrap);
+  @include positioning(relative null, null, null, null);
+}
+
+
+//Price Summary Added Items  Image Wrap
+%inc_added_product_item_image_wrap {
+  @include height_width(42px, 42px);
+  @include overflow(hidden);
+  @include flex-basis(15%);
+  @include positioning(absolute, 0, auto, 0, 5px);
+  @include margin(auto, auto, auto, auto);
+}
+
+
+//Price Summary Added Items  Image item
+%inc_added_product_item_image_item {
+  @include height_width(100%, 100%);
+}
+
+
+//Price Summary Added Items  title wrap
+%inc_added_product_item_title_wrap {
+  @include flex-basis(100%);
+  @include height_width(20px, auto);
+  @include overflow(hidden);
+  @include font-weight(600);
+}
+
+
+//Placeholder Product
+//Placeholder Product
+%inc_placeholder_product {  
+  @extend %inc_primary_font; 
+  @include padding(15px, 15px, 15px, 15px);
+  @include text-align(center);
+  @include positioning(relative, null, null, null, null);
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 200px;
+  
+  @include margin(null,auto,null,auto);
+  &:before{
+    content:'';
+    background: url(../images/inc_cart_icon.svg) no-repeat center center/auto;
+    @include height_width(25px,25px);  
+    @include display(block);
+    @include positioning(absolute, null, null, null, null);
+
+
+  }
+} 
+
+
+// Price checkout wrap
+%inc_price_checkout_wrap {
+  @include positioning(absolute, auto, 0, 0, 0);
+  @include margin(auto, auto, auto, auto);
+  @include height_width(auto, 100%);
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include positioning(sticky, auto, 0, 0, 0);
+    @include flexbox();
+    @include flex-flow(wrap);
+    @include padding(15px, null, 15px, null);
+    background: $backface_color_1;
+  }
+}
+  
+
+// Cart Summary View Block
+%inc_cart_summary_view_block {
+  @include display(none);  
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(40%);
+    @include display(block);
+    @include padding(0, 2px, 0, 15px);
+  }
+}  
+ 
+//View Count
+%inc_view_count{  
+  @include height_width(20px, 20px);
+  @include radius(50%,50%,50%,50%);
+  @include margin(null,null,null,5px); 
+  background: $primary_color;   
+  color:$white;
+  @include rhythm(14, 21);
+}
+
+
+// Price checkout Label Wrap
+%inc_price_checkout_label_wrap {
+  @include border("bottom", 1px, solid, $border_color_1);
+  @include margin(null, null, 10px, null);
+  @include padding(15px, 15px, 0, 15px);  
+
+  //Mobile
+  @include media_query("820", "max") {
+    @include flex-basis(40%);
+    border: none;
+    @include padding(0, 15px, 0, 15px);
+  }
+}
